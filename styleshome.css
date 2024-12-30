@@ -22,6 +22,16 @@ body {
     text-align: center;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    font-size: 18px;
+    color: #4CAF50;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    display: block;
+}
+
 /* Header */
 .main-header {
     display: flex;
@@ -63,6 +73,61 @@ body {
     background-color: #45a049;
 }
 
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 60px; /* Larghezza della sidebar quando è chiusa */
+    margin-top: 20px;
+    transition: width 0.3s ease; /* Transizione per l'animazione della larghezza */
+}
+
+.sidebar.active {
+    width: 250px; /* Larghezza normale della sidebar quando è aperta */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #45a049;
+}
+
+.back-btn {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: #45a049;
+}
+
 /* Main Content */
 .main-content {
     margin-top: 30px;
@@ -80,7 +145,6 @@ p {
     color: #555;
 }
 
-/* Tasto "Menù" */
 .menu-btn {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -88,92 +152,16 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
     margin-top: 20px;
-    width: 100%;
-    max-width: 200px;
-    margin: 20px auto;
 }
 
 .menu-btn:hover {
     background-color: #45a049;
 }
 
-/* Sidebar */
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    width: 100%;
-    max-width: 250px;
-    margin-top: 20px;
-    position: fixed;
-    left: -250px;
-    top: 0;
-    transition: left 0.3s ease;
-}
-
-.sidebar.active {
-    left: 0; /* Quando la sidebar è attiva, la mostra a sinistra */
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar li {
-    margin: 10px 0;
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: #4CAF50;
-    font-size: 16px;
-}
-
-.sidebar a:hover {
-    color: #45a049;
-}
-
-/* Stile per il tasto Indietro */
-.back-btn {
-    color: #4CAF50; /* Colore del testo verde */
-    text-decoration: none; /* Rimuove la sottolineatura */
-    font-size: 16px; /* Stessa dimensione del testo come le voci della sidebar */
-    padding: 10px 0; /* Un po' di padding sopra e sotto per maggiore spazio */
-    display: block; /* Fai in modo che il link occupi tutta la larghezza */
-    text-align: center; /* Centra il testo */
-    margin-top: 10px; /* Distanza dalle voci precedenti */
-    transition: color 0.3s ease; /* Transizione per il colore quando si passa sopra */
-}
-
-.back-btn:hover {
-    color: #45a049; /* Cambia il colore al passaggio del mouse */
-}
-
-/* Responsive Design per schermi più piccoli */
+/* Responsive Design */
 @media (max-width: 768px) {
-
-    /* Header */
-    .main-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .logo-container {
-        margin-bottom: 10px;
-    }
-
-    .user-info {
-        text-align: center;
-        margin-left: 0;
-    }
-
-    /* Sidebar: Aggiungi un layout mobile-friendly */
+    /* Sidebar - Layout mobile-friendly */
     .sidebar {
         margin-top: 20px;
         max-width: 100%;
@@ -188,22 +176,32 @@ p {
         margin: 10px 0;
     }
 
-    .main-content {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .user-info {
+        text-align: center;
         margin-left: 0;
-        padding: 10px;
     }
 
-    .menu-btn {
-        width: 100%;
-        margin: 10px 0;
+    .hamburger-menu {
+        font-size: 30px;
+        display: block;
+        cursor: pointer;
+        color: #4CAF50;
     }
 
-    .logout-btn {
-        width: 100%;
+    .sidebar.active {
+        display: block;
     }
 }
 
-/* Responsive per schermi molto piccoli */
 @media (max-width: 480px) {
     .logo {
         width: 120px;
