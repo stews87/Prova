@@ -63,7 +63,7 @@ body {
     background-color: #45a049;
 }
 
-/* Menu Sidebar */
+/* Sidebar (menu laterale) */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -74,7 +74,12 @@ body {
     width: 100%;
     max-width: 250px;
     margin-top: 20px;
-    display: none; /* Nascondi la sidebar per default */
+    display: none; /* Nascondi la sidebar di default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
 }
 
 .sidebar.active {
@@ -137,19 +142,12 @@ p {
     }
 
     .sidebar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: white;
-        width: 250px;
-        height: 100%;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        transform: translateX(-100%); /* Nascondi sidebar di default */
+        transform: translateX(-100%); /* Nascondi la sidebar di default */
         transition: transform 0.3s ease;
     }
 
     .sidebar.active {
-        transform: translateX(0); /* Mostra sidebar quando è attiva */
+        transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
 }
 
