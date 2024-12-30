@@ -7,9 +7,8 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     color: #333;
-    /* Colore del testo principale */
 }
 
 /* Container principale */
@@ -22,6 +21,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    overflow: hidden;
 }
 
 /* Header */
@@ -30,10 +30,12 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Consente il wrap del contenuto su schermi piccoli */
 }
 
 .logo-container {
     flex: 1;
+    margin-bottom: 10px;
 }
 
 .logo {
@@ -60,7 +62,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    /* Transizione dolce */
 }
 
 .logout-btn:hover {
@@ -78,8 +79,17 @@ body {
     width: 100%;
     max-width: 250px;
     margin-top: 20px;
-    transition: transform 0.3s ease-in-out;
-    /* Animazione per la sidebar */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar nascosta inizialmente */
+    height: 100%;
+    background-color: #2c3e50; /* Sfondo scuro per contrasto */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Animazione di transizione */
+}
+
+.sidebar.active {
+    transform: translateX(250px); /* Mostra la sidebar quando è attiva */
 }
 
 .sidebar ul {
@@ -93,25 +103,16 @@ body {
 
 .sidebar a {
     text-decoration: none;
-    color: #4CAF50;
+    color: white;
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Transizione per hover */
 }
 
 .sidebar a:hover {
     background-color: #16a085;
-    /* Colore di hover per i link */
     color: white;
-}
-
-.sidebar li a.active {
-    background-color: #1abc9c;
-    /* Colore attivo per il link selezionato */
-    font-weight: bold;
-    /* Rende il link attivo in grassetto */
 }
 
 /* Contenuto principale */
@@ -125,7 +126,6 @@ h2 {
     font-size: 28px;
     margin-bottom: 15px;
     transition: color 0.3s ease;
-    /* Aggiunta transizione per colore */
 }
 
 p {
@@ -151,30 +151,33 @@ p {
         margin-left: 0;
     }
 
-    .logout-btn {
-        width: 100%;
-        /* Aumenta il pulsante di logout su dispositivi mobili */
-    }
-
-    /* Sidebar: Aggiungi un layout mobile-friendly */
+    /* Sidebar mobile */
     .sidebar {
-        margin-top: 20px;
         max-width: 100%;
         width: 100%;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: -250px;
-        /* Nasconde la sidebar inizialmente */
-        height: 100%;
         background-color: #2c3e50;
-        /* Sfondo scuro per contrasto */
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        /* Ombra laterale per il menu */
     }
 
     .sidebar.active {
         transform: translateX(250px);
-        /* Mostra la sidebar quando è attiva */
+    }
+
+    /* Hamburger menu */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        color: #4CAF50;
+        margin-top: 10px;
+        z-index: 1000;
+    }
+
+    .hamburger-menu.open {
+        color: #16a085;
     }
 
     .sidebar ul {
@@ -190,19 +193,8 @@ p {
         padding: 10px;
     }
 
-    /* Aggiungi hamburger menu */
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 30px;
-        color: #4CAF50;
-        margin-top: 10px;
-        z-index: 1000;
-    }
-
-    .hamburger-menu.open {
-        color: #16a085;
-        /* Cambia il colore quando il menu è aperto */
+    .logout-btn {
+        width: 100%; /* Aumenta la larghezza del bottone logout */
     }
 }
 
