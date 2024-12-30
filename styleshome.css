@@ -141,20 +141,18 @@ p {
 
 /* Stile per il tasto Indietro */
 .back-btn {
-    background-color: #ffffff; /* Colore di base verde */
-    color: white; /* Colore del testo */
-    border: none;
-    padding: 12px 12px; /* Aggiungi padding per rendere il tasto più grande */
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%; /* Fai in modo che il tasto occupi tutta la larghezza della sidebar */
+    color: #4CAF50; /* Colore del testo verde */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-size: 16px; /* Stessa dimensione del testo come le voci della sidebar */
+    padding: 10px 0; /* Un po' di padding sopra e sotto per maggiore spazio */
+    display: block; /* Fai in modo che il link occupi tutta la larghezza */
     text-align: center; /* Centra il testo */
-    font-size: 16px; /* Dimensione del testo */
-    transition: background-color 0.3s ease; /* Transizione per il cambio di colore */
+    margin-top: 10px; /* Distanza dalle voci precedenti */
+    transition: color 0.3s ease; /* Transizione per il colore quando si passa sopra */
 }
 
 .back-btn:hover {
-    background-color: #45a049; /* Cambia colore quando il mouse passa sopra */
+    color: #45a049; /* Cambia il colore al passaggio del mouse */
 }
 
 /* Responsive Design per schermi più piccoli */
