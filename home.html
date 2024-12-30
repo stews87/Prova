@@ -10,26 +10,28 @@
 
 <body>
     <div class="container">
-
-        <!-- Header con logo, info utente e tasto per aprire il menu -->
+        <!-- Header -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
-
             <div class="user-info">
                 <p><strong>Nome Cognome</strong></p>
                 <p><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
-
-            <!-- Tasto per aprire il menu -->
-            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
         </header>
 
-        <!-- Sidebar (menu laterale) -->
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Benvenuto nella tua Home Page</h2>
+            <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
+            <!-- Tasto Menù -->
+            <button onclick="toggleSidebar()" class="menu-btn">Menù</button>
+        </main>
+
+        <!-- Sidebar -->
         <nav class="sidebar">
-            <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
             <ul>
                 <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
                 <li><a href="pages/cedolini.html">Cedolini</a></li>
@@ -39,26 +41,24 @@
                 <li><a href="pages/altri.html">Altri</a></li>
                 <li><a href="pages/file.html">File</a></li>
                 <li><a href="pages/chat.html">Chat</a></li>
+                <!-- Tasto Indietro alla fine della sidebar -->
+                <li><button onclick="goBack()" class="back-btn">Indietro</button></li>
             </ul>
         </nav>
-
-        <!-- Contenuto principale -->
-        <main class="main-content">
-            <h2>Benvenuto nella tua Home Page</h2>
-            <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
-        </main>
-
     </div>
 
-    <!-- Script per il toggle della sidebar -->
+    <!-- Script per togglare la sidebar -->
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
+            sidebar.classList.toggle('active'); /* Toggle della sidebar */
+        }
+
+        // Funzione per tornare alla home
+        function goBack() {
+            window.location.href = "../home.html"; // Modifica il percorso se necessario
         }
     </script>
 </body>
 
 </html>
-
-
