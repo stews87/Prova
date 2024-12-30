@@ -63,6 +63,18 @@ body {
     background-color: #45a049;
 }
 
+/* Tasto Menù */
+.menu-btn {
+    display: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 /* Sidebar (menu laterale) */
 .sidebar {
     display: flex;
@@ -80,6 +92,21 @@ body {
     left: 0;
     height: 100%;
     z-index: 1000;
+}
+
+/* Tasto Indietro (per chiudere la sidebar) */
+.close-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.close-btn:hover {
+    background-color: #e53935;
 }
 
 .sidebar.active {
@@ -123,16 +150,10 @@ p {
 }
 
 /* Hamburger menu per dispositivi mobili */
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: #4CAF50;
-}
-
-/* Rendi visibile l'hamburger menu solo su dispositivi mobili */
 @media (max-width: 768px) {
-    .hamburger-menu {
+
+    /* Tasto Menù per dispositivi mobili */
+    .menu-btn {
         display: block;
     }
 
@@ -150,4 +171,3 @@ p {
         transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
 }
-
