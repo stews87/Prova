@@ -1,57 +1,51 @@
-/* Reset e impostazioni generali */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Impostazioni di base */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6fa3ef, #88d8f7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #333;
-    line-height: 1.6;
+    /* Colore del testo principale */
 }
 
 /* Container principale */
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-/* Header della pagina */
+/* Header */
 .main-header {
     display: flex;
     justify-content: space-between;
-    /* Spazio tra logo e informazioni utente */
     align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+    flex: 1;
 }
 
 .logo {
-    max-width: 120px;
-    max-height: 120px;
-    transition: transform 0.3s ease;
+    width: 180px;
+    max-width: 100%;
+    height: auto;
 }
 
-.logo:hover {
-    transform: scale(1.1);
-}
-
-/* Spostiamo nome, cognome, codice fiscale e logout a destra */
 .user-info {
+    flex: 2;
     text-align: right;
-    /* Allineamento a destra */
-    font-size: 14px;
+    margin-left: 20px;
 }
 
 .user-info p {
@@ -59,33 +53,33 @@ body {
 }
 
 .logout-btn {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #f44336;
-    /* Rosso per il logout */
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
     transition: background-color 0.3s ease;
+    /* Transizione dolce */
 }
 
 .logout-btn:hover {
-    background-color: #d32f2f;
+    background-color: #45a049;
 }
 
-/* Menu laterale a sinistra */
+/* Menu Sidebar */
 .sidebar {
-    width: 250px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    position: fixed;
-    height: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    /* Animazione per la sidebar */
 }
 
 .sidebar ul {
@@ -94,85 +88,135 @@ body {
 }
 
 .sidebar li {
-    margin-bottom: 15px;
+    margin: 10px 0;
 }
 
 .sidebar a {
-    color: white;
     text-decoration: none;
-    font-size: 18px;
+    color: #4CAF50;
+    font-size: 16px;
     padding: 10px;
-    display: block;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transizione per hover */
 }
 
 .sidebar a:hover {
-    background-color: #444;
+    background-color: #16a085;
+    /* Colore di hover per i link */
+    color: white;
+}
+
+.sidebar li a.active {
+    background-color: #1abc9c;
+    /* Colore attivo per il link selezionato */
+    font-weight: bold;
+    /* Rende il link attivo in grassetto */
 }
 
 /* Contenuto principale */
 .main-content {
-    flex-grow: 1;
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-left: 270px;
-    /* Distanza dal menu laterale */
+    margin-top: 30px;
+    text-align: center;
 }
 
 h2 {
     color: #4CAF50;
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
+    /* Aggiunta transizione per colore */
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
 }
 
-/* Responsività per dispositivi mobili */
+/* Responsive Design per schermi più piccoli */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
 
+    /* Header */
     .main-header {
         flex-direction: column;
+        text-align: center;
     }
 
     .logo-container {
         margin-bottom: 10px;
     }
 
-    .sidebar {
+    .user-info {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .logout-btn {
         width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px;
-        position: relative;
+        /* Aumenta il pulsante di logout su dispositivi mobili */
+    }
+
+    /* Sidebar: Aggiungi un layout mobile-friendly */
+    .sidebar {
+        margin-top: 20px;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: -250px;
+        /* Nasconde la sidebar inizialmente */
+        height: 100%;
+        background-color: #2c3e50;
+        /* Sfondo scuro per contrasto */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        /* Ombra laterale per il menu */
+    }
+
+    .sidebar.active {
+        transform: translateX(250px);
+        /* Mostra la sidebar quando è attiva */
     }
 
     .sidebar ul {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        padding: 0;
+        text-align: center;
     }
 
     .sidebar li {
-        margin: 0;
+        margin: 10px 0;
     }
 
     .main-content {
         margin-left: 0;
-        padding: 15px;
+        padding: 10px;
     }
 
+    /* Aggiungi hamburger menu */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        color: #4CAF50;
+        margin-top: 10px;
+        z-index: 1000;
+    }
+
+    .hamburger-menu.open {
+        color: #16a085;
+        /* Cambia il colore quando il menu è aperto */
+    }
+}
+
+/* Mobile extra small */
+@media (max-width: 480px) {
     .logo {
-        max-width: 100px;
-        max-height: 100px;
+        width: 120px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
     }
 }
