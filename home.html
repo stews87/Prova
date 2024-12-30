@@ -10,23 +10,26 @@
 
 <body>
     <div class="container">
+
+        <!-- Header con logo, info utente e menu hamburger -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
+
             <div class="user-info">
                 <p><strong>Nome Cognome</strong></p>
                 <p><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
 
-            <!-- Hamburger Menu -->
+            <!-- Hamburger menu per dispositivi mobili -->
             <div class="hamburger-menu" onclick="toggleSidebar()">
-                &#9776; <!-- Simbolo dell'hamburger -->
+                &#9776; <!-- Icona dell'hamburger -->
             </div>
         </header>
 
-        <!-- Sidebar -->
+        <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
             <ul>
                 <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
@@ -40,23 +43,21 @@
             </ul>
         </nav>
 
-        <!-- Main Content -->
+        <!-- Contenuto principale -->
         <main class="main-content">
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
+
     </div>
 
-    <!-- Script per togglare la sidebar -->
+    <!-- Script per il toggle della sidebar -->
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active'); /* Toggle della sidebar */
-            const hamburger = document.querySelector('.hamburger-menu');
-            hamburger.classList.toggle('open'); /* Cambia il colore dell'icona */
+            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
         }
     </script>
-
 </body>
 
 </html>
