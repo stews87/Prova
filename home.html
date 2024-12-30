@@ -19,43 +19,44 @@
                 <p><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
+
+            <!-- Hamburger Menu (Aggiungi questo qui sotto la barra di navigazione) -->
+            <div class="hamburger-menu" onclick="toggleSidebar()">
+                &#9776; <!-- Simbolo dell'hamburger -->
+            </div>
         </header>
 
-        <div class="content-wrapper">
-            <nav class="sidebar">
-                <ul>
-                    <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
-                    <li><a href="pages/cedolini.html">Cedolini</a></li>
-                    <li><a href="pages/cu.html">CU</a></li>
-                    <li><a href="pages/bacheca.html">Bacheca</a></li>
-                    <li><a href="pages/documenti.html">Documenti</a></li>
-                    <li><a href="pages/altri.html">Altri</a></li>
-                    <li><a href="pages/file.html">File</a></li>
-                    <li><a href="pages/chat.html">Chat</a></li>
-                </ul>
-            </nav>
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
+                <li><a href="pages/cedolini.html">Cedolini</a></li>
+                <li><a href="pages/cu.html">CU</a></li>
+                <li><a href="pages/bacheca.html">Bacheca</a></li>
+                <li><a href="pages/documenti.html">Documenti</a></li>
+                <li><a href="pages/altri.html">Altri</a></li>
+                <li><a href="pages/file.html">File</a></li>
+                <li><a href="pages/chat.html">Chat</a></li>
+            </ul>
+        </nav>
 
-            <main class="main-content">
-                <h2>Benvenuto nella tua Home Page</h2>
-                <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
-            </main>
-        </div>
-
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Benvenuto nella tua Home Page</h2>
+            <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
+        </main>
     </div>
 
+    <!-- Script per togglare la sidebar -->
     <script>
-        // Controlla se l'utente è autenticato
-        if (!localStorage.getItem('isAuthenticated')) {
-            // Se non è autenticato, reindirizza alla pagina di login
-            window.location.href = "index.html";
-        }
-
-        // Funzione per mostrare/nascondere la sidebar quando il menu hamburger è cliccato
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active');
+            sidebar.classList.toggle('active'); /* Toggle della sidebar */
+            const hamburger = document.querySelector('.hamburger-menu');
+            hamburger.classList.toggle('open'); /* Cambia il colore dell'icona */
         }
     </script>
+
 </body>
 
 </html>
