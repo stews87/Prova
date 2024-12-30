@@ -141,7 +141,7 @@ p {
 
 /* Stile per il tasto Indietro */
 .back-btn {
-    background-color: #4CAF50; /* Colore di base verde */
+    background-color: #ffffff; /* Colore di base verde */
     color: white; /* Colore del testo */
     border: none;
     padding: 12px 12px; /* Aggiungi padding per rendere il tasto più grande */
