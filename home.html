@@ -11,7 +11,7 @@
 <body>
     <div class="container">
 
-        <!-- Header con logo, info utente e menu hamburger -->
+        <!-- Header con logo, info utente e tasto per aprire il menu -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
@@ -23,14 +23,13 @@
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
 
-            <!-- Hamburger menu per dispositivi mobili -->
-            <div class="hamburger-menu" onclick="toggleSidebar()">
-                &#9776; <!-- Icona dell'hamburger -->
-            </div>
+            <!-- Tasto per aprire il menu -->
+            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
         </header>
 
         <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
+            <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
             <ul>
                 <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
                 <li><a href="pages/cedolini.html">Cedolini</a></li>
@@ -61,4 +60,5 @@
 </body>
 
 </html>
+
 
