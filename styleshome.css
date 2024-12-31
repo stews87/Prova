@@ -1,76 +1,173 @@
-/* Sidebar (menu laterale) */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #f4f4f4;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    display: none;
+ /* Impostazioni di base */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6fa3ef, #88d8f7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
+/* Container principale */
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+.user-info {
+    flex: 2;
+    text-align: right;
+    margin-left: 20px;
+}
+
+.user-info p {
     margin: 0;
 }
 
-.sidebar li {
-    margin: 20px 0;
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    padding: 10px 15px;
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
     border-radius: 5px;
-    display: block;
-    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
-.sidebar a:hover {
-    background-color: #ddd;
+.logout-btn:hover {
+    background-color: #45a049;
 }
 
-.sidebar .close-btn {
+/* Tasto Menù */
+.menu-btn {
+    display: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Sidebar (menu laterale) */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 20px;
+    display: none; /* Nascondi la sidebar di default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+}
+
+/* Tasto Indietro (per chiudere la sidebar) */
+.close-btn {
     background-color: #f44336;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.sidebar .close-btn:hover {
+.close-btn:hover {
     background-color: #e53935;
 }
 
-/* Button per aprire il menu */
-.menu-btn {
-    padding: 10px 20px;
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.sidebar.active {
+    display: block; /* Mostra la sidebar quando è attiva */
 }
 
-.menu-btn:hover {
-    background-color: #1976D2;
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.hidden {
-    display: none;
+.sidebar li {
+    margin: 10px 0;
 }
 
-.success {
-    color: green;
+.sidebar a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 16px;
 }
 
-.error {
-    color: red;
+.sidebar a:hover {
+    color: #45a049;
+}
+
+/* Contenuto principale */
+.main-content {
+    margin-top: 30px;
+    text-align: center;
+}
+
+h2 {
+    color: #4CAF50;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Hamburger menu per dispositivi mobili */
+@media (max-width: 768px) {
+
+    /* Tasto Menù per dispositivi mobili */
+    .menu-btn {
+        display: block;
+    }
+
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sidebar {
+        transform: translateX(-100%); /* Nascondi la sidebar di default */
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Mostra la sidebar quando è attiva */
+    }
 }
