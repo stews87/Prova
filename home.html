@@ -10,24 +10,26 @@
 
 <body>
     <div class="container">
-        <!-- Hamburger Menu -->
-        <div class="hamburger-menu" onclick="toggleSidebar()">
-            Menù
-        </div>
 
+        <!-- Header con logo, info utente e tasto per aprire il menu -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
+
             <div class="user-info">
                 <p><strong>Nome Cognome</strong></p>
                 <p><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
+
+            <!-- Tasto per aprire il menu -->
+            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
         </header>
 
-        <!-- Sidebar -->
+        <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
+            <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
             <ul>
                 <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
                 <li><a href="pages/cedolini.html">Cedolini</a></li>
@@ -37,27 +39,22 @@
                 <li><a href="pages/altri.html">Altri</a></li>
                 <li><a href="pages/file.html">File</a></li>
                 <li><a href="pages/chat.html">Chat</a></li>
-                <!-- Tasto Indietro -->
-                <li><a href="javascript:history.back()" class="back-btn">Indietro</a></li>
             </ul>
         </nav>
 
-        <!-- Main Content -->
+        <!-- Contenuto principale -->
         <main class="main-content">
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
-            <button onclick="window.location.href='pages/menu.html'" class="menu-btn">Menù</button>
         </main>
+
     </div>
 
+    <!-- Script per il toggle della sidebar -->
     <script>
-        // Funzione per togglare la sidebar (apertura/chiusura)
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active'); /* Toggle della sidebar */
-
-            const hamburger = document.querySelector('.hamburger-menu');
-            hamburger.classList.toggle('open'); /* Cambia il colore dell'icona */
+            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
         }
     </script>
 </body>
