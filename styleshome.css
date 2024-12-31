@@ -170,4 +170,4 @@ p {
     .sidebar.active {
         transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
-}
+} 
