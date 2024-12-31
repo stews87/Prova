@@ -19,13 +19,11 @@
             <form id="login-form">
                 <div class="form-group">
                     <label for="username">Nome utente</label>
-                    <input type="text" id="username" name="username" required
-                        placeholder="Inserisci il tuo nome utente">
+                    <input type="text" id="username" name="username" required placeholder="Inserisci il tuo nome utente">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required
-                        placeholder="Inserisci la tua password">
+                    <label for="password">Password (Codice Fiscale)</label>
+                    <input type="password" id="password" name="password" required placeholder="Inserisci la tua password">
                 </div>
                 <button type="submit">Accedi</button>
             </form>
@@ -36,6 +34,14 @@
     </div>
 
     <script>
+        // Elenco utenti con codice fiscale
+        const users = [
+            { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
+            { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
+            { username: "Luca Rossi", codiceFiscale: "DEF456789012" }
+            // Aggiungi altri utenti qui
+        ];
+
         // Funzione per gestire il login
         document.getElementById("login-form").addEventListener("submit", function (event) {
             event.preventDefault(); // Evita il comportamento di submit del form
@@ -44,27 +50,27 @@
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Definisci le credenziali corrette
-            const correctUsername = "Stefano";
-            const correctPassword = "1";
+            // Trova l'utente corrispondente al nome utente e codice fiscale
+            const user = users.find(u => u.username === username && u.codiceFiscale === password);
 
-            // Trova il messaggio di errore/successo
             const messageElement = document.getElementById("message");
 
-            // Controlla le credenziali
-            if (username === correctUsername && password === correctPassword) {
-                messageElement.textContent = "Accesso riuscito! Benvenuto, " + username + "!";
+            if (user) {
+                // Accesso riuscito
+                messageElement.textContent = "Accesso riuscito! Benvenuto, " + user.username + "!";
                 messageElement.className = "success";
                 messageElement.classList.remove("hidden");
 
-                // Salva l'autenticazione nello storage
-                localStorage.setItem('isAuthenticated', 'true');
+                // Salviamo i dati dell'utente nella sessione
+                sessionStorage.setItem('username', user.username);
+                sessionStorage.setItem('codiceFiscale', user.codiceFiscale);
 
                 // Dopo 2 secondi, redirigi l'utente alla pagina home
                 setTimeout(function () {
                     window.location.href = "home.html";  // Redirige alla pagina home
-                }, 2000); // Il ritardo è di 2 secondi per visualizzare il messaggio di successo
+                }, 2000); // Il ritardo è di 2 secondi per visualizzare il messaggio
             } else {
+                // Credenziali errate
                 messageElement.textContent = "Credenziali errate. Riprova.";
                 messageElement.className = "error";
                 messageElement.classList.remove("hidden");
