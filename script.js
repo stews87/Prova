@@ -17,7 +17,7 @@ document.getElementById("login-form").addEventListener("submit", function (event
         { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
         { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
         { username: "Luca Rossi", codiceFiscale: "DEF456789012" },
-        { username: "1", codiceFiscale: "1" }
+        { username: "PieroCastrovinci", codiceFiscale: "1234567ABC" }
         // Aggiungi altri utenti qui
     ];
 
