@@ -16,7 +16,8 @@ document.getElementById("login-form").addEventListener("submit", function (event
     const users = [
         { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
         { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
-        { username: "Luca Rossi", codiceFiscale: "DEF456789012" }
+        { username: "Luca Rossi", codiceFiscale: "DEF456789012" },
+        { username: "1", codiceFiscale: "1" }
         // Aggiungi altri utenti qui
     ];
 
