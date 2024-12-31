@@ -10,14 +10,16 @@
 
 <body>
     <div class="container">
+
         <!-- Header con logo, info utente e tasto per aprire il menu -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
+
             <div class="user-info">
-                <p><strong id="user-name">Nome Cognome</strong></p>
-                <p><strong id="user-cf">Codice Fiscale: XYZ123456789</strong></p>
+                <p id="user-name"><strong>Nome Cognome</strong></p>
+                <p id="user-cf"><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
         </header>
@@ -25,7 +27,7 @@
         <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
             <ul>
-                <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
+                <li><a href="pages/ultimo-cedolino.html">Ultimo Cedolino</a></li>
                 <li><a href="pages/cedolini.html">Cedolini</a></li>
                 <li><a href="pages/cu.html">CU</a></li>
                 <li><a href="pages/bacheca.html">Bacheca</a></li>
@@ -41,37 +43,45 @@
         <main class="main-content">
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
-
-            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
         </main>
+
+        <!-- Tasto per aprire il menu -->
+        <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
+
     </div>
 
-    <script src="script.js"></script>
+    <!-- Script per il toggle della sidebar -->
     <script>
-        // Elenco utenti con codice fiscale
-        const users = [
-            { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
-            { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
-            { username: "Luca Rossi", codiceFiscale: "DEF456789012" },
-            { username: "1", codiceFiscale: "1" }
-            // Aggiungi altri utenti qui
-        ];
-
-        // Recupera i dati utente dalla sessione
-        const username = sessionStorage.getItem('username');
-        const codiceFiscale = sessionStorage.getItem('codiceFiscale');
-
-        // Trova l'utente corrispondente
-        const user = users.find(u => u.username === username && u.codiceFiscale === codiceFiscale);
-        
-        if (user) {
-            // Mostra i dati utente nella homepage
-            document.getElementById('user-name').textContent = user.username; // Nome Utente
-            document.getElementById('user-cf').textContent = `Codice Fiscale: ${user.codiceFiscale}`; // Codice Fiscale
-        } else {
-            // Se non è trovato, redirigi alla pagina di login
-            window.location.href = 'index.html';
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
         }
+
+        window.addEventListener('load', function () {
+            // Elenco utenti con codice fiscale
+            const users = [
+                { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
+                { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
+                { username: "Luca Rossi", codiceFiscale: "DEF456789012" }
+                // Aggiungi altri utenti qui
+            ];
+
+            // Recupera i dati utente dalla sessione
+            const username = sessionStorage.getItem('username');
+            const codiceFiscale = sessionStorage.getItem('codiceFiscale');
+
+            // Trova l'utente corrispondente
+            const user = users.find(u => u.username === username && u.codiceFiscale === codiceFiscale);
+
+            if (user) {
+                // Mostra i dati utente nella homepage
+                document.getElementById('user-name').textContent = user.username; // Nome Utente
+                document.getElementById('user-cf').textContent = `Codice Fiscale: ${user.codiceFiscale}`; // Codice Fiscale
+            } else {
+                // Se non è trovato, redirigi alla pagina di login
+                window.location.href = 'index.html';
+            }
+        });
     </script>
 </body>
 
