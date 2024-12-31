@@ -1,83 +1,76 @@
-/* Impostazioni di base */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #6fa3ef, #88d8f7);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Container principale */
-.container {
-    width: 100%;
-    max-width: 900px;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* Header */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.logo-container {
-    flex: 1;
-}
-
-.logo {
-    width: 180px;
-    max-width: 100%;
-    height: auto;
-}
-
-.user-info {
-    flex: 2;
-    text-align: right;
-    margin-left: 20px;
-}
-
-.user-info p {
-    margin: 0;
-}
-
-.logout-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.logout-btn:hover {
-    background-color: #45a049;
-}
-
-/* Tasto Menù */
-.menu-btn {
-    display: none;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
 /* Sidebar (menu laterale) */
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-   
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 20px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+}
+
+.sidebar .close-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.sidebar .close-btn:hover {
+    background-color: #e53935;
+}
+
+/* Button per aprire il menu */
+.menu-btn {
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background-color: #1976D2;
+}
+
+.hidden {
+    display: none;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
