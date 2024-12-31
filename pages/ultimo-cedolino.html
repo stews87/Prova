@@ -21,15 +21,15 @@
                 <img src="../Logo.jpg" alt="Logo" class="logo">
             </div>
 
-            <!-- Form per inserire la password -->
+            <!-- Form per inserire il codice fiscale -->
             <div class="password-container" id="passwordContainer">
-                <label for="password">Inserisci la password:</label>
-                <input type="password" id="password" placeholder="Password" required>
-                <button onclick="verifyPassword()">Accedi</button>
+                <label for="codiceFiscale">Inserisci il tuo codice fiscale:</label>
+                <input type="text" id="codiceFiscale" placeholder="Codice Fiscale" required>
+                <button onclick="verifyCodiceFiscale()">Accedi</button>
                 <button onclick="goBack()" id="backButton">Indietro</button>
             </div>
 
-            <!-- Contenuto che verrà mostrato dopo aver inserito la password corretta -->
+            <!-- Contenuto che verrà mostrato dopo aver inserito il codice fiscale corretto -->
             <div class="file-container hidden" id="fileContainer">
                 <!-- Solo il file PDF è visibile dopo il login corretto -->
                 <embed id="pdfEmbed" src="../pdfs/ultimo/documento.pdf" type="application/pdf">
@@ -41,30 +41,30 @@
 
     </div>
 
-    <!-- Script per verificare la password -->
+    <!-- Script per verificare il codice fiscale -->
     <script>
-        function verifyPassword() {
-            // Password predefinita
-            const correctPassword = "123456"; // Cambia questa con la password che desideri
-            const inputPassword = document.getElementById("password").value;
+        function verifyCodiceFiscale() {
+            // Ottieni il codice fiscale memorizzato durante il login
+            const storedCodiceFiscale = localStorage.getItem('codiceFiscale');
+            const inputCodiceFiscale = document.getElementById("codiceFiscale").value;
 
-            if (inputPassword === correctPassword) {
-                // Se la password è corretta, nasconde il logo e il form
+            // Verifica se il codice fiscale inserito corrisponde a quello memorizzato
+            if (inputCodiceFiscale === storedCodiceFiscale) {
+                // Se il codice fiscale è corretto, nascondi il logo e il form, e mostra il file
                 document.getElementById("logoContainer").style.display = "none";  // Nasconde il logo
                 document.getElementById("passwordContainer").style.display = "none";  // Nasconde il form
                 document.getElementById("fileContainer").classList.remove("hidden"); // Mostra il file PDF
             } else {
                 // Altrimenti, mostra un messaggio di errore
-                alert("Password errata. Riprova.");
+                alert("Codice fiscale errato. Riprova.");
             }
         }
 
         // Funzione per tornare alla home
-            function goBack() {
-                // Cambia il percorso con quello della tua pagina home
-                window.location.href = "../home.html"; // Assicurati che il percorso sia corretto
-         }
-        
+        function goBack() {
+            // Cambia il percorso con quello della tua pagina home
+            window.location.href = "../home.html"; // Assicurati che il percorso sia corretto
+        }
     </script>
 
 </body>
