@@ -14,10 +14,10 @@ document.getElementById("login-form").addEventListener("submit", function (event
 
     // Elenco utenti con codice fiscale
     const users = [
-        { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
-        { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
-        { username: "Luca Rossi", codiceFiscale: "DEF456789012" },
-        { username: "PieroCastrovinci", codiceFiscale: "1234567ABC" }
+        { username: "StefanoGalli", codiceFiscale: "XYZ123456789" },
+            { username: "MariaBianchi", codiceFiscale: "ABC987654321" },
+            { username: "LucaRossi", codiceFiscale: "DEF456789012" },
+            { username: "StefanoRaffiti ", codiceFiscale: "RFFSFN87M01I199W" }
         // Aggiungi altri utenti qui
     ];
 
@@ -51,9 +51,10 @@ document.getElementById("login-form").addEventListener("submit", function (event
 window.addEventListener('load', function() {
     // Elenco utenti con codice fiscale
     const users = [
-        { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
-        { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
-        { username: "Luca Rossi", codiceFiscale: "DEF456789012" }
+        { username: "StefanoGalli", codiceFiscale: "XYZ123456789" },
+            { username: "MariaBianchi", codiceFiscale: "ABC987654321" },
+            { username: "LucaRossi", codiceFiscale: "DEF456789012" },
+            { username: "StefanoRaffiti ", codiceFiscale: "RFFSFN87M01I199W" }
         // Aggiungi altri utenti qui
     ];
 
