@@ -1,21 +1,27 @@
-// Elenco utenti con codice fiscale
-const users = [
-    { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
-    { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
-    { username: "Luca Rossi", codiceFiscale: "DEF456789012" }
-    // Aggiungi altri utenti qui
-];
+// Funzione per mostrare/nascondere la sidebar (menu laterale)
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = (sidebar.style.display === 'block') ? 'none' : 'block';
+}
 
-// Funzione per gestire il login
+// Gestione del login e autenticazione
 document.getElementById("login-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Evita il comportamento di submit del form
 
     // Ottieni i valori inseriti dall'utente
-    const codiceFiscale = document.getElementById("password").value; // Il codice fiscale è la "password"
-    
-    // Trova l'utente corrispondente al codice fiscale
-    const user = users.find(u => u.codiceFiscale === codiceFiscale);
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
 
+    // Elenco utenti con codice fiscale
+    const users = [
+        { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
+        { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
+        { username: "Luca Rossi", codiceFiscale: "DEF456789012" }
+        // Aggiungi altri utenti qui
+    ];
+
+    // Trova l'utente corrispondente al nome utente e codice fiscale
+    const user = users.find(u => u.username === username && u.codiceFiscale === password);
     const messageElement = document.getElementById("message");
 
     if (user) {
@@ -31,17 +37,38 @@ document.getElementById("login-form").addEventListener("submit", function (event
         // Dopo 2 secondi, redirigi l'utente alla pagina home
         setTimeout(function () {
             window.location.href = "home.html";  // Redirige alla pagina home
-        }, 2000); // Ritardo di 2 secondi per visualizzare il messaggio
+        }, 2000); // Il ritardo è di 2 secondi per visualizzare il messaggio
     } else {
         // Credenziali errate
-        messageElement.textContent = "Codice fiscale errato. Riprova.";
+        messageElement.textContent = "Credenziali errate. Riprova.";
         messageElement.className = "error";
         messageElement.classList.remove("hidden");
     }
-});
-
-// Funzione per togglare la sidebar (apertura/chiusura)
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('active'); /* Toggle della sidebar */
 }
+
+// Gestione del contenuto della home page
+window.addEventListener('load', function() {
+    // Elenco utenti con codice fiscale
+    const users = [
+        { username: "Stefano Galli", codiceFiscale: "XYZ123456789" },
+        { username: "Maria Bianchi", codiceFiscale: "ABC987654321" },
+        { username: "Luca Rossi", codiceFiscale: "DEF456789012" }
+        // Aggiungi altri utenti qui
+    ];
+
+    // Recupera i dati utente dalla sessione
+    const username = sessionStorage.getItem('username');
+    const codiceFiscale = sessionStorage.getItem('codiceFiscale');
+
+    // Trova l'utente corrispondente
+    const user = users.find(u => u.username === username && u.codiceFiscale === codiceFiscale);
+
+    if (user) {
+        // Mostra i dati utente nella homepage
+        document.getElementById('user-name').textContent = user.username; // Nome Utente
+        document.getElementById('user-cf').textContent = `Codice Fiscale: ${user.codiceFiscale}`; // Codice Fiscale
+    } else {
+        // Se non è trovato, redirigi alla pagina di login
+        window.location.href = 'index.html';
+    }
+});
