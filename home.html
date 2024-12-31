@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styleshome.css">
 </head>
+
 <body>
     <div class="container">
-        <header>
+
+        <!-- Header con logo, info utente e tasto per aprire il menu -->
+        <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
 
             <div class="user-info">
-                <p id="user-name"><strong>Nome Cognome</strong></p>
-                <p id="user-cf"><strong>Codice Fiscale: XYZ123456789</strong></p>
-                <button onclick="logout()" class="logout-btn">Logout</button>
+                <p><strong>Nome Cognome</strong></p>
+                <p><strong>Codice Fiscale: XYZ123456789</strong></p>
+                <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
-        </header>
 
         <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
             <ul>
-                <li><a href="pages/ultimo-cedolino.html">Ultimo Cedolino</a></li>
+                <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
                 <li><a href="pages/cedolini.html">Cedolini</a></li>
                 <li><a href="pages/cu.html">CU</a></li>
                 <li><a href="pages/bacheca.html">Bacheca</a></li>
@@ -31,45 +34,29 @@
                 <li><a href="pages/altri.html">Altri</a></li>
                 <li><a href="pages/file.html">File</a></li>
                 <li><a href="pages/chat.html">Chat</a></li>
+            <ul> 
+                <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
             </ul>
-            <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
         </nav>
 
-        <main>
+        <!-- Contenuto principale -->
+        <main class="main-content">
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
 
-        <!-- Tasto per aprire il menu -->
-        <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
-
-        <script>
-            window.addEventListener('load', function () {
-                const username = sessionStorage.getItem('username');
-                const codiceFiscale = sessionStorage.getItem('codiceFiscale');
-
-                // Verifica se i dati sono presenti
-                if (username && codiceFiscale) {
-                    // Mostra i dati utente nella home
-                    document.getElementById('user-name').textContent = username; 
-                    document.getElementById('user-cf').textContent = `Codice Fiscale: ${codiceFiscale}`;
-                } else {
-                    // Se non ci sono dati, reindirizza alla pagina di login
-                    window.location.href = 'index.html';
-                }
-            });
-
-            function logout() {
-                sessionStorage.removeItem('username');
-                sessionStorage.removeItem('codiceFiscale');
-                window.location.href = 'index.html'; // Reindirizza alla pagina di login
-            }
-
-            function toggleSidebar() {
-                const sidebar = document.querySelector('.sidebar');
-                sidebar.classList.toggle('active'); // Attiva/disattiva la sidebar
-            }
-        </script>
-    </div>
+        </ul>
+       <!-- Tasto per aprire il menu -->
+            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
+        </header>
+    
+    <!-- Script per il toggle della sidebar -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
+        }
+    </script>
 </body>
-</html>
+
+</html> 
