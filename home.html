@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styleshome.css">
 </head>
-
 <body>
     <div class="container">
-
-        <!-- Header con logo, info utente e tasto per aprire il menu -->
-        <header class="main-header">
+        <header>
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
@@ -20,7 +16,7 @@
             <div class="user-info">
                 <p id="user-name"><strong>Nome Cognome</strong></p>
                 <p id="user-cf"><strong>Codice Fiscale: XYZ123456789</strong></p>
-                <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
+                <button onclick="logout()" class="logout-btn">Logout</button>
             </div>
         </header>
 
@@ -39,50 +35,41 @@
             <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
         </nav>
 
-        <!-- Contenuto principale -->
-        <main class="main-content">
+        <main>
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
 
-        </ul>
-       <!-- Tasto per aprire il menu -->
-            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
-        </header>
-    <!-- Script per il toggle della sidebar -->
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
-        }
+        <!-- Tasto per aprire il menu -->
+        <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
 
-        window.addEventListener('load', function () {
-            // Elenco utenti con codice fiscale
-            const users = [
-                { username: "StefanoGalli", codiceFiscale: "XYZ123456789" },
-                { username: "MariaBianchi", codiceFiscale: "ABC987654321" },
-                { username: "LucaRossi", codiceFiscale: "DEF456789012" },
-                { username: "StefanoRaffiti ", codiceFiscale: "RFFSFN87M01I199W" }
-                // Aggiungi altri utenti qui
-            ];
+        <script>
+            window.addEventListener('load', function () {
+                const username = sessionStorage.getItem('username');
+                const codiceFiscale = sessionStorage.getItem('codiceFiscale');
 
-            // Recupera i dati utente dalla sessione
-            const username = sessionStorage.getItem('username');
-            const codiceFiscale = sessionStorage.getItem('codiceFiscale');
+                // Verifica se i dati sono presenti
+                if (username && codiceFiscale) {
+                    // Mostra i dati utente nella home
+                    document.getElementById('user-name').textContent = username; 
+                    document.getElementById('user-cf').textContent = `Codice Fiscale: ${codiceFiscale}`;
+                } else {
+                    // Se non ci sono dati, reindirizza alla pagina di login
+                    window.location.href = 'index.html';
+                }
+            });
 
-            // Trova l'utente corrispondente
-            const user = users.find(u => u.username === username && u.codiceFiscale === codiceFiscale);
-
-            if (user) {
-                // Mostra i dati utente nella homepage
-                document.getElementById('user-name').textContent = user.username; // Nome Utente
-                document.getElementById('user-cf').textContent = `Codice Fiscale: ${user.codiceFiscale}`; // Codice Fiscale
-            } else {
-                // Se non è trovato, redirigi alla pagina di login
-                window.location.href = 'index.html';
+            function logout() {
+                sessionStorage.removeItem('username');
+                sessionStorage.removeItem('codiceFiscale');
+                window.location.href = 'index.html'; // Reindirizza alla pagina di login
             }
-        });
-    </script>
-</body>
 
+            function toggleSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.classList.toggle('active'); // Attiva/disattiva la sidebar
+            }
+        </script>
+    </div>
+</body>
 </html>
