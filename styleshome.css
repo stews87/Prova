@@ -13,7 +13,7 @@ body {
 /* Container principale */
 .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 100%;
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
@@ -83,14 +83,14 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    width: 100%;
-    max-width: 250px;
-    margin-top: 20px;
+    width: 250px; /* Dimensione fissa per la sidebar */
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     z-index: 1000;
+    transform: translateX(-100%); /* Nascosto di default */
+    transition: transform 0.3s ease;
 }
 
 /* Tasto Indietro (per chiudere la sidebar) */
@@ -133,6 +133,7 @@ body {
     text-align: center;
 }
 
+/* Titoli */
 h2 {
     color: #4CAF50;
     font-size: 28px;
@@ -146,6 +147,7 @@ p {
 
 /* Hamburger menu per dispositivi mobili */
 @media (max-width: 768px) {
+
     /* Tasto Menù per dispositivi mobili */
     .menu-btn {
         display: block;
@@ -157,13 +159,13 @@ p {
     }
 
     /* Sidebar su mobile */
-    .sidebar {
-        transform: translateX(-100%); /* Nascondi la sidebar di default */
-        transition: transform 0.3s ease;
-    }
-
     .sidebar.active {
         transform: translateX(0); /* Mostra la sidebar quando è attiva */
+    }
+
+    /* Nascondi il contenuto principale dietro la sidebar */
+    .main-content {
+        margin-left: 0;
     }
 }
 
@@ -171,12 +173,7 @@ p {
 @media (min-width: 769px) {
     /* Sidebar visibile sempre su desktop */
     .sidebar {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        z-index: 1000;
+        transform: translateX(0); /* Mostra sempre la sidebar */
     }
 
     /* Contenuto principale con margine per la sidebar */
