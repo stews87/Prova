@@ -87,7 +87,7 @@ body {
     max-width: 250px;
     margin-top: 20px;
     display: none; /* Nascondi la sidebar di default */
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -162,6 +162,7 @@ p {
         text-align: center;
     }
 
+    /* Sidebar su mobile */
     .sidebar {
         transform: translateX(-100%); /* Nascondi la sidebar di default */
         transition: transform 0.3s ease;
@@ -170,4 +171,25 @@ p {
     .sidebar.active {
         transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
-} 
+}
+
+/* Aggiungere visibilità della sidebar su desktop */
+@media (min-width: 769px) {
+    /* Sidebar visibile sempre su desktop */
+    .sidebar {
+        display: block;
+        position: static;
+        transform: none; /* Rimuovi la trasformazione mobile */
+        margin-top: 0;
+    }
+
+    /* Contenuto principale con margine per la sidebar */
+    .main-content {
+        margin-left: 270px; /* Spazio per la sidebar */
+    }
+
+    /* Nascondi il tasto menu su desktop */
+    .menu-btn {
+        display: none;
+    }
+}
