@@ -1,4 +1,4 @@
-/* Impostazioni di base */
+ /* Impostazioni di base */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -6,20 +6,20 @@ body {
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Container principale */
 .container {
     width: 100%;
-    max-width: 100%;
+    max-width: 900px;
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 20px;
 }
 
 /* Header */
@@ -83,14 +83,15 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    width: 250px; /* Dimensione fissa per la sidebar */
-    position: fixed;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 20px;
+    display: none; /* Nascondi la sidebar di default */
+    position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     z-index: 1000;
-    transform: translateX(-100%); /* Nascosto di default su mobile */
-    transition: transform 0.3s ease;
 }
 
 /* Tasto Indietro (per chiudere la sidebar) */
@@ -106,6 +107,10 @@ body {
 
 .close-btn:hover {
     background-color: #e53935;
+}
+
+.sidebar.active {
+    display: block; /* Mostra la sidebar quando è attiva */
 }
 
 .sidebar ul {
@@ -131,10 +136,8 @@ body {
 .main-content {
     margin-top: 30px;
     text-align: center;
-    padding: 20px;
 }
 
-/* Titoli */
 h2 {
     color: #4CAF50;
     font-size: 28px;
@@ -159,32 +162,12 @@ p {
         text-align: center;
     }
 
-    /* Sidebar su mobile */
+    .sidebar {
+        transform: translateX(-100%); /* Nascondi la sidebar di default */
+        transition: transform 0.3s ease;
+    }
+
     .sidebar.active {
         transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
-
-    /* Contenuto principale sotto la sidebar */
-    .main-content {
-        margin-left: 0; /* Rimuovi margine su mobile */
-    }
-}
-
-/* Aggiungere visibilità della sidebar su desktop */
-@media (min-width: 769px) {
-    /* Sidebar visibile sempre su desktop */
-    .sidebar {
-        transform: translateX(0); /* Mostra sempre la sidebar */
-    }
-
-    /* Contenuto principale con margine per la sidebar */
-    .main-content {
-        margin-left: 270px; /* Spazio per la sidebar */
-        padding: 20px;
-    }
-
-    /* Nascondi il tasto menu su desktop */
-    .menu-btn {
-        display: none;
-    }
-}
+} 
