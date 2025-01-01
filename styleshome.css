@@ -6,8 +6,8 @@ body {
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* Allinea a sinistra per il contenuto */
+    align-items: flex-start;
 }
 
 /* Container principale */
@@ -86,7 +86,6 @@ body {
     width: 100%;
     max-width: 250px;
     margin-top: 20px;
-    display: none; /* Nascondi la sidebar di default */
     position: fixed;
     top: 0;
     left: 0;
@@ -107,10 +106,6 @@ body {
 
 .close-btn:hover {
     background-color: #e53935;
-}
-
-.sidebar.active {
-    display: block; /* Mostra la sidebar quando è attiva */
 }
 
 .sidebar ul {
@@ -151,7 +146,6 @@ p {
 
 /* Hamburger menu per dispositivi mobili */
 @media (max-width: 768px) {
-
     /* Tasto Menù per dispositivi mobili */
     .menu-btn {
         display: block;
@@ -178,14 +172,17 @@ p {
     /* Sidebar visibile sempre su desktop */
     .sidebar {
         display: block;
-        position: static;
-        transform: none; /* Rimuovi la trasformazione mobile */
-        margin-top: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1000;
     }
 
     /* Contenuto principale con margine per la sidebar */
     .main-content {
         margin-left: 270px; /* Spazio per la sidebar */
+        padding: 20px;
     }
 
     /* Nascondi il tasto menu su desktop */
