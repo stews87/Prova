@@ -6,22 +6,20 @@ body {
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    /* Colore del testo principale */
+    flex-direction: column;
 }
 
 /* Container principale */
 .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 100%;
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-top: 20px;
 }
 
 /* Header */
@@ -59,15 +57,25 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    /* Transizione dolce */
 }
 
 .logout-btn:hover {
     background-color: #45a049;
 }
 
-/* Menu Sidebar */
+/* Tasto Menù */
+.menu-btn {
+    display: none;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Sidebar (menu laterale) */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -75,11 +83,29 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    width: 100%;
-    max-width: 250px;
-    margin-top: 20px;
-    transition: transform 0.3s ease-in-out;
-    /* Animazione per la sidebar */
+    width: 250px; /* Dimensione fissa per la sidebar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    transform: translateX(-100%); /* Nascosto di default su mobile */
+    transition: transform 0.3s ease;
+}
+
+/* Tasto Indietro (per chiudere la sidebar) */
+.close-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.close-btn:hover {
+    background-color: #e53935;
 }
 
 .sidebar ul {
@@ -95,37 +121,24 @@ body {
     text-decoration: none;
     color: #4CAF50;
     font-size: 16px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* Transizione per hover */
 }
 
 .sidebar a:hover {
-    background-color: #16a085;
-    /* Colore di hover per i link */
-    color: white;
-}
-
-.sidebar li a.active {
-    background-color: #1abc9c;
-    /* Colore attivo per il link selezionato */
-    font-weight: bold;
-    /* Rende il link attivo in grassetto */
+    color: #45a049;
 }
 
 /* Contenuto principale */
 .main-content {
     margin-top: 30px;
     text-align: center;
+    padding: 20px;
 }
 
+/* Titoli */
 h2 {
     color: #4CAF50;
     font-size: 28px;
     margin-bottom: 15px;
-    transition: color 0.3s ease;
-    /* Aggiunta transizione per colore */
 }
 
 p {
@@ -133,90 +146,45 @@ p {
     color: #555;
 }
 
-/* Responsive Design per schermi più piccoli */
+/* Hamburger menu per dispositivi mobili */
 @media (max-width: 768px) {
 
-    /* Header */
+    /* Tasto Menù per dispositivi mobili */
+    .menu-btn {
+        display: block;
+    }
+
     .main-header {
         flex-direction: column;
         text-align: center;
     }
 
-    .logo-container {
-        margin-bottom: 10px;
-    }
-
-    .user-info {
-        text-align: center;
-        margin-left: 0;
-    }
-
-    .logout-btn {
-        width: 100%;
-        /* Aumenta il pulsante di logout su dispositivi mobili */
-    }
-
-    /* Sidebar: Aggiungi un layout mobile-friendly */
-    .sidebar {
-        margin-top: 20px;
-        max-width: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: -250px;
-        /* Nasconde la sidebar inizialmente */
-        height: 100%;
-        background-color: #2c3e50;
-        /* Sfondo scuro per contrasto */
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        /* Ombra laterale per il menu */
-    }
-
+    /* Sidebar su mobile */
     .sidebar.active {
-        transform: translateX(250px);
-        /* Mostra la sidebar quando è attiva */
+        transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
 
-    .sidebar ul {
-        text-align: center;
-    }
-
-    .sidebar li {
-        margin: 10px 0;
-    }
-
+    /* Contenuto principale sotto la sidebar */
     .main-content {
-        margin-left: 0;
-        padding: 10px;
-    }
-
-    /* Aggiungi hamburger menu */
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 30px;
-        color: #4CAF50;
-        margin-top: 10px;
-        z-index: 1000;
-    }
-
-    .hamburger-menu.open {
-        color: #16a085;
-        /* Cambia il colore quando il menu è aperto */
+        margin-left: 0; /* Rimuovi margine su mobile */
     }
 }
 
-/* Mobile extra small */
-@media (max-width: 480px) {
-    .logo {
-        width: 120px;
+/* Aggiungere visibilità della sidebar su desktop */
+@media (min-width: 769px) {
+    /* Sidebar visibile sempre su desktop */
+    .sidebar {
+        transform: translateX(0); /* Mostra sempre la sidebar */
     }
 
-    h2 {
-        font-size: 20px;
+    /* Contenuto principale con margine per la sidebar */
+    .main-content {
+        margin-left: 270px; /* Spazio per la sidebar */
+        padding: 20px;
     }
 
-    p {
-        font-size: 14px;
+    /* Nascondi il tasto menu su desktop */
+    .menu-btn {
+        display: none;
     }
 }
