@@ -7,7 +7,8 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Modificato per evitare che l'altezza si accorci */
+    flex-direction: column;
 }
 
 /* Container principale */
@@ -83,8 +84,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    width: 100%;
-    max-width: 250px;
+    width: 250px; /* Sidebar di larghezza fissa */
     margin-top: 20px;
     display: none; /* Nascondi la sidebar di default */
     position: absolute;
@@ -94,7 +94,6 @@ body {
     z-index: 1000;
 }
 
-/* Tasto Indietro (per chiudere la sidebar) */
 .close-btn {
     background-color: #f44336;
     color: white;
@@ -151,7 +150,6 @@ p {
 
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
-
     /* Tasto Menù per dispositivi mobili */
     .menu-btn {
         display: block;
@@ -170,20 +168,17 @@ p {
     .sidebar.active {
         transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
+
+    /* Rendi il layout a colonna anche per il contenuto */
+    .container {
+        padding: 20px;
+        width: 100%;
+    }
 }
 
 /* Media query per desktop */
 @media (min-width: 769px) {
-    /* Assicurati che la sidebar sia visibile e ben posizionata */
-    .sidebar {
-        display: block; /* La sidebar è visibile su desktop */
-        position: static;
-        width: 250px; /* Imposta una larghezza fissa per la sidebar */
-        height: auto; /* Non deve occupare l'intera altezza su desktop */
-        margin-top: 0; /* Rimuovi il margine top */
-    }
-
-    /* Rendi il layout del header meno compatto su desktop */
+    /* Usa Flexbox per affiancare la sidebar e il contenuto */
     .main-header {
         flex-direction: row;
         text-align: left;
@@ -193,12 +188,23 @@ p {
         margin-left: 20px;
     }
 
-    /* Aggiungi margini e padding ai contenuti principali su desktop */
+    /* Imposta il layout della pagina con due colonne (Sidebar + Contenuto principale) */
     .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 40px;
     }
 
+    .sidebar {
+        display: block; /* La sidebar è visibile su desktop */
+        position: static; /* Rendi la sidebar statica per evitare sovrapposizioni */
+        margin-top: 0;
+    }
+
+    /* Aggiungi margini al contenuto per evitare sovrapposizioni */
     .main-content {
-        margin-top: 50px;
+        margin-left: 20px; /* Aggiungi un po' di spazio tra sidebar e contenuto */
+        margin-top: 0; /* Aggiungi margini sufficienti per distanziare gli altri elementi */
     }
 }
