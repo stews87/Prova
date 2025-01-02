@@ -6,24 +6,21 @@ body {
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     height: 100vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     flex-direction: column;
 }
 
 /* Container principale */
 .container {
     width: 100%;
-    max-width: 1200px; /* Larghezza massima per desktop */
+    max-width: 1200px;
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
     margin-top: 20px;
     display: flex;
-    flex-direction: column; /* Layout di default per dispositivi mobili */
+    flex-direction: column;
 }
 
 /* Header */
@@ -90,7 +87,8 @@ body {
     width: 250px;
     position: fixed; /* Sidebar fissa */
     top: 0;
-    left: -250px; /* Inizialmente fuori dallo schermo */
+    left: -250px; /* Nascondi inizialmente la sidebar */
+    height: 100%; /* Sidebar deve occupare tutta l'altezza */
     transition: left 0.3s ease-in-out; /* Animazione per il movimento */
     z-index: 1000;
 }
@@ -164,7 +162,7 @@ p {
     /* Sidebar (menu laterale) */
     .sidebar {
         top: 0;
-        position: fixed; /* Sidebar fissa per mobile */
+        position: fixed;
         height: 100%;
         z-index: 999;
         left: -250px; /* Sidebar nascosta di default */
@@ -175,8 +173,6 @@ p {
     }
 
     .container {
-        display: flex;
-        flex-direction: column; /* Layout a colonna per mobile */
         padding: 10px;
     }
 
@@ -197,7 +193,8 @@ p {
         position: static; /* Sidebar statica per desktop */
         width: 250px;
         margin-right: 20px;
-        top: auto; /* Evita che la sidebar si sposti in alto */
+        top: auto;
+        left: 0;
     }
 
     .main-content {
