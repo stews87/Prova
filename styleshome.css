@@ -6,7 +6,7 @@ body {
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     height: 100vh;
     display: flex;
-    justify-content: flex-start; /* Cambiato per allineare il contenuto in alto */
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
 }
@@ -23,7 +23,7 @@ body {
     text-align: center;
     margin-top: 20px;
     display: flex;
-    flex-direction: column; /* Default layout per dispositivi mobili */
+    flex-direction: column; /* Layout di default per dispositivi mobili */
 }
 
 /* Header */
@@ -88,15 +88,15 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
     width: 250px;
-    position: absolute;
+    position: fixed; /* Sidebar fissa */
     top: 0;
-    left: -250px; /* Sidebar inizialmente fuori dallo schermo */
-    transition: left 0.3s ease-in-out; /* Animazione per farla entrare */
+    left: -250px; /* Inizialmente fuori dallo schermo */
+    transition: left 0.3s ease-in-out; /* Animazione per il movimento */
     z-index: 1000;
 }
 
 .sidebar.active {
-    left: 0; /* Quando attiva, la sidebar entra dallo schermo */
+    left: 0; /* Mostra la sidebar quando è attiva */
 }
 
 .close-btn {
@@ -163,11 +163,11 @@ p {
 
     /* Sidebar (menu laterale) */
     .sidebar {
-        width: 250px;
         top: 0;
-        position: fixed; /* Sidebar fissa quando aperta */
+        position: fixed; /* Sidebar fissa per mobile */
         height: 100%;
         z-index: 999;
+        left: -250px; /* Sidebar nascosta di default */
     }
 
     .sidebar.active {
@@ -176,7 +176,7 @@ p {
 
     .container {
         display: flex;
-        flex-direction: column; /* Layout a colonna su dispositivi mobili */
+        flex-direction: column; /* Layout a colonna per mobile */
         padding: 10px;
     }
 
@@ -189,14 +189,15 @@ p {
 @media (min-width: 769px) {
     .container {
         display: flex;
-        flex-direction: row; /* Layout a due colonne su desktop */
+        flex-direction: row; /* Layout a due colonne per desktop */
         padding: 20px;
     }
 
     .sidebar {
-        position: static; /* Rendi la sidebar statica su desktop */
+        position: static; /* Sidebar statica per desktop */
         width: 250px;
         margin-right: 20px;
+        top: auto; /* Evita che la sidebar si sposti in alto */
     }
 
     .main-content {
