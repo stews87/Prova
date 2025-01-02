@@ -1,4 +1,4 @@
- /* Impostazioni di base */
+/* Impostazioni di base */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -149,7 +149,7 @@ p {
     color: #555;
 }
 
-/* Hamburger menu per dispositivi mobili */
+/* Media query per dispositivi mobili */
 @media (max-width: 768px) {
 
     /* Tasto Menù per dispositivi mobili */
@@ -170,4 +170,35 @@ p {
     .sidebar.active {
         transform: translateX(0); /* Mostra la sidebar quando è attiva */
     }
-} 
+}
+
+/* Media query per desktop */
+@media (min-width: 769px) {
+    /* Assicurati che la sidebar sia visibile e ben posizionata */
+    .sidebar {
+        display: block; /* La sidebar è visibile su desktop */
+        position: static;
+        width: 250px; /* Imposta una larghezza fissa per la sidebar */
+        height: auto; /* Non deve occupare l'intera altezza su desktop */
+        margin-top: 0; /* Rimuovi il margine top */
+    }
+
+    /* Rendi il layout del header meno compatto su desktop */
+    .main-header {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .user-info {
+        margin-left: 20px;
+    }
+
+    /* Aggiungi margini e padding ai contenuti principali su desktop */
+    .container {
+        padding: 40px;
+    }
+
+    .main-content {
+        margin-top: 50px;
+    }
+}
