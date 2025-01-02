@@ -6,15 +6,15 @@ body {
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Modificato per evitare che l'altezza si accorci */
+    justify-content: flex-start; /* Cambiato per allineare il contenuto in alto */
+    align-items: flex-start;
     flex-direction: column;
 }
 
 /* Container principale */
 .container {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px; /* Aumentato per desktop */
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
@@ -84,7 +84,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    width: 250px; /* Sidebar di larghezza fissa */
+    width: 250px;
     margin-top: 20px;
     display: none; /* Nascondi la sidebar di default */
     position: absolute;
@@ -179,32 +179,24 @@ p {
 /* Media query per desktop */
 @media (min-width: 769px) {
     /* Usa Flexbox per affiancare la sidebar e il contenuto */
-    .main-header {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    .user-info {
-        margin-left: 20px;
-    }
-
-    /* Imposta il layout della pagina con due colonne (Sidebar + Contenuto principale) */
     .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        display: flex; /* Flexbox per il layout a 2 colonne */
+        flex-direction: row; /* Colonne per desktop */
+        justify-content: flex-start;
         padding: 40px;
     }
 
     .sidebar {
-        display: block; /* La sidebar è visibile su desktop */
-        position: static; /* Rendi la sidebar statica per evitare sovrapposizioni */
-        margin-top: 0;
+        display: block; /* Mostra la sidebar su desktop */
+        position: static; /* Rimuovi posizione assoluta per evitare sovrapposizioni */
+        margin-right: 20px; /* Spazio tra la sidebar e il contenuto */
+        width: 250px; /* Imposta una larghezza fissa */
     }
 
-    /* Aggiungi margini al contenuto per evitare sovrapposizioni */
+    /* Rimuovi margini sul contenuto principale su desktop */
     .main-content {
-        margin-left: 20px; /* Aggiungi un po' di spazio tra sidebar e contenuto */
-        margin-top: 0; /* Aggiungi margini sufficienti per distanziare gli altri elementi */
+        margin-left: 20px; /* Spazio tra sidebar e contenuto */
+        flex: 1; /* Consenti al contenuto di occupare lo spazio disponibile */
+        text-align: left;
     }
 }
