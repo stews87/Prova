@@ -198,6 +198,11 @@ p {
     .main-content {
         margin-left: 20px;
         flex-grow: 1; /* Consenti al contenuto di espandersi */
+        padding-left: 20px; /* Migliora la spaziatura */
+    }
+
+    .menu-btn {
+        display: none; /* Nascondi il menu su desktop */
     }
 }
 
