@@ -11,16 +11,11 @@ body {
 
 /* Container principale */
 .container {
-    width: 100%;
-    max-width: 1400px;
+    display: flex;
+    flex-direction: row; /* Affianca la sidebar e il contenuto principale */
+    min-height: 100vh; /* Altura minima della finestra */
     padding: 20px;
     box-sizing: border-box;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Header */
@@ -28,6 +23,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     margin-bottom: 20px;
 }
 
@@ -76,7 +72,7 @@ body {
     font-size: 16px;
 }
 
-/* Sidebar come Pop-Up */
+/* Sidebar (menu laterale) */
 .sidebar {
     position: fixed;
     top: 0;
@@ -129,8 +125,9 @@ body {
 
 /* Contenuto principale */
 .main-content {
-    margin-top: 30px;
-    text-align: center;
+    flex-grow: 1; /* Consente al contenuto di espandersi */
+    margin-left: 260px; /* Spazio per la sidebar */
+    padding: 20px;
 }
 
 h2 {
@@ -156,13 +153,11 @@ p {
         text-align: center;
     }
 
-    /* Sidebar (menu laterale) */
     .sidebar {
-        top: 0;
         position: fixed;
-        height: 100%;
-        z-index: 999;
+        top: 0;
         left: -250px; /* Sidebar nascosta di default */
+        z-index: 999;
     }
 
     .sidebar.active {
@@ -170,11 +165,11 @@ p {
     }
 
     .container {
-        padding: 10px;
+        flex-direction: column; /* Stack per dispositivi mobili */
     }
 
     .main-content {
-        margin-top: 20px;
+        margin-left: 0;
     }
 }
 
@@ -187,21 +182,15 @@ p {
     }
 
     .sidebar {
-        position: static; /* Sidebar statica per desktop */
+        position: static;
         width: 250px;
         margin-right: 20px;
         top: auto;
         left: 0;
-        box-sizing: border-box;
     }
 
     .main-content {
         margin-left: 20px;
-        flex-grow: 1; /* Consenti al contenuto di espandersi */
+        flex-grow: 1;
     }
-}
-
-/* Correzioni per prevenire overflow */
-body, .container {
-    overflow-x: hidden; /* Prevenire scorrimento orizzontale */
 }
