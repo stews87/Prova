@@ -10,8 +10,7 @@
 
 <body>
     <div class="container">
-
-        <!-- Header con logo, info utente e tasto per aprire il menu -->
+        <!-- Header -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
@@ -23,11 +22,10 @@
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
 
-            <!-- Tasto per aprire il menu -->
             <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
         </header>
 
-        <!-- Sidebar (menu laterale) -->
+        <!-- Sidebar -->
         <nav class="sidebar">
             <ul>
                 <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
@@ -42,21 +40,19 @@
             <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
         </nav>
 
-        <!-- Contenuto principale -->
+        <!-- Main Content -->
         <main class="main-content">
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
     </div>
 
-    <!-- Script per il toggle della sidebar -->
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
+            sidebar.classList.toggle('active');
         }
     </script>
-
 </body>
 
 </html>
