@@ -11,7 +11,8 @@ body {
 /* Container principale */
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Dispone la sidebar e il contenuto principale orizzontalmente */
+    position: relative;
 }
 
 /* Header */
@@ -20,8 +21,9 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
     padding: 10px;
+    background-color: white;
+    z-index: 1001;
 }
 
 .logo-container {
@@ -71,7 +73,7 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* Sidebar nascosta di default */
     height: 100%;
     width: 250px;
     background-color: #ffffff;
@@ -82,7 +84,7 @@ body {
 }
 
 .sidebar.active {
-    left: 0;
+    left: 0; /* Sidebar visibile */
 }
 
 .sidebar ul {
@@ -117,9 +119,12 @@ body {
 /* Contenuto principale */
 .main-content {
     flex-grow: 1;
-    margin-left: 0;
     padding: 20px;
     transition: margin-left 0.3s ease;
+}
+
+.main-content.shifted {
+    margin-left: 250px; /* Sposta il contenuto a destra quando la sidebar è visibile */
 }
 
 /* Media query per dispositivi mobili */
@@ -134,7 +139,7 @@ body {
         left: 0;
     }
 
-    .main-content {
-        margin-left: 0;
+    .main-content.shifted {
+        margin-left: 0; /* Il contenuto non si sposta su mobile */
     }
 }
