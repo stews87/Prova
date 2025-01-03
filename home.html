@@ -23,6 +23,10 @@
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
 
+            <!-- Tasto per aprire il menu -->
+            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
+        </header>
+
         <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
             <ul>
@@ -34,9 +38,8 @@
                 <li><a href="pages/altri.html">Altri</a></li>
                 <li><a href="pages/file.html">File</a></li>
                 <li><a href="pages/chat.html">Chat</a></li>
-            <ul> 
-                <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
             </ul>
+            <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
         </nav>
 
         <!-- Contenuto principale -->
@@ -44,12 +47,8 @@
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
+    </div>
 
-        </ul>
-       <!-- Tasto per aprire il menu -->
-            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
-        </header>
-    
     <!-- Script per il toggle della sidebar -->
     <script>
         function toggleSidebar() {
@@ -57,6 +56,7 @@
             sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
         }
     </script>
+
 </body>
 
-</html> 
+</html>
