@@ -4,18 +4,17 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Container principale */
 .container {
     display: flex;
-    flex-direction: row; /* Affianca la sidebar e il contenuto principale */
-    min-height: 100vh; /* Altura minima della finestra */
-    padding: 20px;
-    box-sizing: border-box;
+    flex-direction: row;
+    flex-grow: 1;  /* Aggiungi questo per rendere il layout fluido */
+    min-height: 100vh;  /* Per evitare che il contenuto diventi troppo corto */
 }
 
 /* Header */
@@ -25,6 +24,7 @@ body {
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
+    padding: 10px;
 }
 
 .logo-container {
@@ -40,7 +40,6 @@ body {
 .user-info {
     flex: 2;
     text-align: right;
-    margin-left: 20px;
 }
 
 .user-info p {
@@ -60,7 +59,7 @@ body {
     background-color: #45a049;
 }
 
-/* Tasto Menù */
+/* Tasto Menù (visibile solo su mobile) */
 .menu-btn {
     display: none;
     padding: 10px 20px;
@@ -83,11 +82,11 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     z-index: 1000;
-    transition: left 0.3s ease; /* Animazione per lo scorrimento */
+    transition: left 0.3s ease;
 }
 
 .sidebar.active {
-    left: 0; /* Mostra la sidebar quando è attiva */
+    left: 0; /* Sidebar visibile quando attivata */
 }
 
 .close-btn {
@@ -126,8 +125,9 @@ body {
 /* Contenuto principale */
 .main-content {
     flex-grow: 1; /* Consente al contenuto di espandersi */
-    margin-left: 260px; /* Spazio per la sidebar */
+    margin-left: 270px; /* Aggiungi margine per la sidebar */
     padding: 20px;
+    transition: margin-left 0.3s ease;
 }
 
 h2 {
@@ -143,7 +143,6 @@ p {
 
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
-    /* Tasto Menù per dispositivi mobili */
     .menu-btn {
         display: block;
     }
@@ -158,6 +157,7 @@ p {
         top: 0;
         left: -250px; /* Sidebar nascosta di default */
         z-index: 999;
+        transition: left 0.3s ease;
     }
 
     .sidebar.active {
@@ -165,7 +165,7 @@ p {
     }
 
     .container {
-        flex-direction: column; /* Stack per dispositivi mobili */
+        flex-direction: column;
     }
 
     .main-content {
@@ -177,12 +177,11 @@ p {
 @media (min-width: 769px) {
     .container {
         display: flex;
-        flex-direction: row; /* Layout a due colonne per desktop */
-        padding: 20px;
+        flex-direction: row;
     }
 
     .sidebar {
-        position: static;
+        position: static; /* Sidebar fissa */
         width: 250px;
         margin-right: 20px;
         top: auto;
@@ -190,7 +189,6 @@ p {
     }
 
     .main-content {
-        margin-left: 20px;
-        flex-grow: 1;
+        margin-left: 270px; /* Spazio per la sidebar */
     }
 }
