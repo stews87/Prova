@@ -12,7 +12,7 @@ body {
 /* Container principale */
 .container {
     width: 100%;
-    max-width: 1400px; /* Larghezza maggiore per desktop */
+    max-width: 1400px;
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
@@ -78,9 +78,9 @@ body {
 
 /* Sidebar come Pop-Up */
 .sidebar {
-    position: fixed; /* Sidebar fissa su mobile */
+    position: fixed;
     top: 0;
-    left: -250px; /* Nascosta inizialmente */
+    left: -250px; /* Sidebar nascosta inizialmente */
     height: 100%;
     width: 250px;
     background-color: #ffffff;
@@ -198,11 +198,6 @@ p {
     .main-content {
         margin-left: 20px;
         flex-grow: 1; /* Consenti al contenuto di espandersi */
-        padding-left: 20px; /* Migliora la spaziatura */
-    }
-
-    .menu-btn {
-        display: none; /* Nascondi il menu su desktop */
     }
 }
 
