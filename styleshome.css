@@ -76,21 +76,18 @@ body {
     font-size: 16px;
 }
 
-/* Sidebar (menu laterale) */
+/* Sidebar come Pop-Up */
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    width: 250px;
-    position: fixed; /* Sidebar fissa per mobile */
+    position: fixed; /* Sidebar fissa su mobile */
     top: 0;
-    left: -250px; /* Sidebar nascosta inizialmente */
+    left: -250px; /* Nascosta inizialmente */
     height: 100%;
-    transition: left 0.3s ease-in-out; /* Animazione per il movimento */
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     z-index: 1000;
+    transition: left 0.3s ease; /* Animazione per lo scorrimento */
 }
 
 .sidebar.active {
