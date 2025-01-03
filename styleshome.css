@@ -6,15 +6,12 @@ body {
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 /* Container principale */
 .container {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;  /* Aggiungi questo per rendere il layout fluido */
-    min-height: 100vh;  /* Per evitare che il contenuto diventi troppo corto */
 }
 
 /* Header */
@@ -59,9 +56,8 @@ body {
     background-color: #45a049;
 }
 
-/* Tasto Menù (visibile solo su mobile) */
+/* Tasto Menù (visibile su tutti i dispositivi) */
 .menu-btn {
-    display: none;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -71,36 +67,22 @@ body {
     font-size: 16px;
 }
 
-/* Sidebar (menu laterale) */
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Sidebar nascosta inizialmente */
+    left: -250px;
     height: 100%;
     width: 250px;
     background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    z-index: 1000;
     transition: left 0.3s ease;
+    z-index: 1000;
 }
 
 .sidebar.active {
-    left: 0; /* Sidebar visibile quando attivata */
-}
-
-.close-btn {
-    background-color: #f44336;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.close-btn:hover {
-    background-color: #e53935;
+    left: 0;
 }
 
 .sidebar ul {
@@ -122,73 +104,37 @@ body {
     color: #45a049;
 }
 
+.close-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 /* Contenuto principale */
 .main-content {
-    flex-grow: 1; /* Consente al contenuto di espandersi */
-    margin-left: 270px; /* Aggiungi margine per la sidebar */
+    flex-grow: 1;
+    margin-left: 0;
     padding: 20px;
     transition: margin-left 0.3s ease;
 }
 
-h2 {
-    color: #4CAF50;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-p {
-    font-size: 18px;
-    color: #555;
-}
-
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
-    .menu-btn {
-        display: block;
-    }
-
-    .main-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .sidebar {
         position: fixed;
         top: 0;
         left: -250px; /* Sidebar nascosta di default */
-        z-index: 999;
-        transition: left 0.3s ease;
     }
 
     .sidebar.active {
-        left: 0; /* Sidebar entra quando attiva */
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-    .main-content {
-        margin-left: 0;
-    }
-}
-
-/* Media query per desktop */
-@media (min-width: 769px) {
-    .container {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .sidebar {
-        position: static; /* Sidebar fissa */
-        width: 250px;
-        margin-right: 20px;
-        top: auto;
         left: 0;
     }
 
     .main-content {
-        margin-left: 270px; /* Spazio per la sidebar */
+        margin-left: 0;
     }
 }
