@@ -12,7 +12,7 @@ body {
 /* Container principale */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px; /* Aumentato per una larghezza maggiore su schermi grandi */
     padding: 20px;
     box-sizing: border-box;
     background-color: white;
@@ -195,10 +195,12 @@ p {
         margin-right: 20px;
         top: auto;
         left: 0;
+        box-sizing: border-box;
     }
 
     .main-content {
         margin-left: 20px;
         flex-grow: 1; /* Consenti al contenuto di espandersi */
+        overflow: hidden; /* Previene eventuali problemi di overflow */
     }
 }
