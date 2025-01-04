@@ -148,90 +148,47 @@ body {
     background-color: #6cc6cb;
 }
 
-/* Responsive Design per schermi più piccoli */
+/* Responsività per dispositivi mobili */
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 
-    /* Header */
     .main-header {
         flex-direction: column;
-        text-align: center;
     }
 
     .logo-container {
         margin-bottom: 10px;
     }
 
-    .user-info {
-        text-align: center;
-        margin-left: 0;
-    }
-
-    .logout-btn {
-        width: 100%;
-        /* Aumenta il pulsante di logout su dispositivi mobili */
-    }
-
-    /* Sidebar: Aggiungi un layout mobile-friendly */
     .sidebar {
-        margin-top: 20px;
-        max-width: 100%;
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: -250px;
-        /* Nasconde la sidebar inizialmente */
-        height: 100%;
-        background-color: #2c3e50;
-        /* Sfondo scuro per contrasto */
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        /* Ombra laterale per il menu */
-    }
-
-    .sidebar.active {
-        transform: translateX(250px);
-        /* Mostra la sidebar quando è attiva */
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        position: relative;
     }
 
     .sidebar ul {
-        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0;
     }
 
     .sidebar li {
-        margin: 10px 0;
+        margin: 0;
     }
 
     .main-content {
         margin-left: 0;
-        padding: 10px;
+        padding: 15px;
     }
 
-    /* Aggiungi hamburger menu */
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 30px;
-        color: #4CAF50;
-        margin-top: 10px;
-        z-index: 1000;
-    }
-
-    .hamburger-menu.open {
-        color: #16a085;
-        /* Cambia il colore quando il menu è aperto */
-    }
-}
-
-/* Mobile extra small */
-@media (max-width: 480px) {
     .logo {
-        width: 120px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 14px;
+        max-width: 100px;
+        max-height: 100px;
     }
 }
