@@ -5,8 +5,9 @@ body {
     padding: 0;
     height: 100vh;
     background-image: url('Consulenza.jpg'); /* Aggiungi l'immagine di sfondo */
-    background-size: cover; /* L'immagine copre tutta la pagina */
+    background-size: contain; /* Mantiene proporzioni corrette */
     background-position: center center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Evita ripetizioni dell'immagine */
     background-attachment: fixed; /* L'immagine non si sposterà quando si scorre */
     color: white; /* Testo bianco per contrasto */
 }
@@ -19,20 +20,20 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
-    padding-top: 80px; /* Spazio sopra per evitare la sovrapposizione */
+    padding-top: 120px; /* Spazio sopra per evitare la sovrapposizione */
 }
 
 /* Header con logo e informazioni utente */
 .main-header {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aggiungi allineamento centrale tra logo e info utente */
+    align-items: center;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Assicurati che l'header sia sopra il contenuto */
+    z-index: 1000;
     background-color: rgba(0, 0, 0, 0.5); /* Sfondo trasparente per l'header */
     padding: 15px 50px;
 }
@@ -49,7 +50,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px; /* Spazio tra Logout e informazioni */
+    gap: 20px;
 }
 
 /* Bottoni e stile */
@@ -107,7 +108,7 @@ body {
 /* Contenuto principale */
 .main-content {
     text-align: center;
-    margin-top: 100px; /* Distanza per far spazio all'header fisso */
+    margin-top: 120px; /* Distanza per far spazio all'header fisso */
 }
 
 h2 {
@@ -154,4 +155,30 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+
+    .menu-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .main-content {
+        margin-top: 140px;
+    }
+
+    .logo-container img {
+        width: 100px;
+    }
 }
