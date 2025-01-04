@@ -125,28 +125,28 @@ body {
 .main-content {
     text-align: center;
     margin: 150px auto 0 auto;
-    padding: 20px;
+    padding: 250px;
     max-width: 800px;
-    box-sizing: border-box;
+    color: white;
+    font-size: 20px;
 }
 
 /* Pulsante per aprire il menu */
 .menu-btn {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 600px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 20px;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
+    font-size: 25px;
+    border-radius: 15px;
     z-index: 1000;
 }
 
 .menu-btn:hover {
-    background-color: #33c03e;
+    background-color: #6cc6cb;
 }
 
 /* Media query per dispositivi mobili */
