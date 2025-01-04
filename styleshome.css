@@ -1,9 +1,9 @@
 /* Impostiamo il background dell'intera pagina */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+    margin: 20;
+    padding: 20;
+    height: auto;
     background-image: url('Consulenza.jpg');
     background-size: cover;
     background-position: center center;
@@ -17,29 +17,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     height: 100%;
     width: 100%;
 }
-
-/* Header con logo e informazioni utente */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 15px 30px;
-    box-sizing: border-box;
-}
-
 /* Logo */
 .logo-container img {
-    width: 120px;
+    width: 250px;
+    align-self: center;
 }
 
 /* Informazioni utente */
@@ -55,14 +40,15 @@ body {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 12px;
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
+    align-self: self-end;
 }
 
 .logout-btn:hover {
-    background-color: #45a049;
+    background-color: #e50c0c;
 }
 
 /* Sidebar */
@@ -125,24 +111,9 @@ body {
     transition: margin-left 0.3s ease;
 }
 
-/* Sposta il contenuto quando la sidebar è attiva */
-.sidebar.active ~ .main-content {
-    margin-left: 250px;
-}
-
-h2 {
-    font-size: 32px;
-}
-
-p {
-    font-size: 18px;
-}
-
 /* Pulsante per aprire il menu */
 .menu-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    align-self: center;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -154,7 +125,7 @@ p {
 }
 
 .menu-btn:hover {
-    background-color: #45a049;
+    background-color: #33c03e;
 }
 
 /* Stile per il contenitore centrale */
