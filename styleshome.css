@@ -26,8 +26,7 @@ body {
 .main-header {
     position: relative;
     width: 100%;
-    padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px 0;
     z-index: 1000;
     box-sizing: border-box;
 }
@@ -35,12 +34,12 @@ body {
 /* Sezione sinistra: info utente e logout */
 .header-left {
     position: absolute;
-    left: 20px;
+    left: 50px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 10px;
 }
 
@@ -125,11 +124,10 @@ body {
 /* Contenuto principale */
 .main-content {
     text-align: center;
-    margin: 150px auto 0 auto;
-    padding: 250px;
+    padding: 300px;
     max-width: 800px;
-    color: white;
-    font-size: 20px;
+    color: #07f59d;
+    font-size: 25px;
 }
 
 /* Pulsante per aprire il menu */
