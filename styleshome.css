@@ -4,23 +4,22 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url('Consulenza.jpg'); /* Aggiungi l'immagine di sfondo */
-    background-size: contain; /* Mantiene proporzioni corrette */
-    background-position: center center; /* Centra l'immagine */
-    background-repeat: no-repeat; /* Evita ripetizioni dell'immagine */
-    background-attachment: fixed; /* L'immagine non si sposterà quando si scorre */
-    color: white; /* Testo bianco per contrasto */
+    background-image: url('Consulenza.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: white;
+    overflow-x: hidden; /* Evita scroll orizzontale */
 }
 
 /* Contenitore della pagina */
 .container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     height: 100%;
     width: 100%;
-    position: relative;
-    padding-top: 120px; /* Spazio sopra per evitare la sovrapposizione */
 }
 
 /* Header con logo e informazioni utente */
@@ -32,39 +31,31 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5); /* Sfondo trasparente per l'header */
-    padding: 15px 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    box-sizing: border-box;
 }
 
-/* Logo centrato */
+/* Logo */
 .logo-container img {
-    width: 150px;
-    display: block;
-    margin: 0 auto;
+    width: 120px;
 }
 
-@media (max-width: 768px) {
-    .logo-container img {
-        width: 100px;
-    }
-}
-
-/* Informazioni utente a destra */
+/* Informazioni utente */
 .user-info {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     gap: 20px;
+    color: white;
 }
 
-/* Bottoni e stile */
+/* Bottoni */
 .logout-btn {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 8px 12px;
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
@@ -82,9 +73,10 @@ body {
     width: 250px;
     height: 100%;
     background-color: #333;
-    transition: all 0.3s ease;
+    transition: left 0.3s ease;
     padding: 10px;
-    z-index: 500;
+    z-index: 900;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .sidebar.active {
@@ -111,10 +103,25 @@ body {
     background-color: #4CAF50;
 }
 
+/* Pulsante per chiudere il menu */
+.close-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
 /* Contenuto principale */
 .main-content {
     text-align: center;
-    margin-top: 120px; /* Distanza per far spazio all'header fisso */
+    margin: 120px auto 0 auto;
+    padding: 20px;
+    max-width: 800px;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -136,75 +143,15 @@ p {
     padding: 10px;
     cursor: pointer;
     font-size: 18px;
+    border-radius: 5px;
     z-index: 1000;
-    transition: transform 0.3s ease;
 }
 
 .menu-btn:hover {
     background-color: #45a049;
-    transform: scale(1.1);
 }
 
-/* Pulsante per chiudere la sidebar */
-.close-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: transform 0.3s ease;
-}
-
-.close-btn:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
-}
-
-/* Altri stili */
-button {
-    padding: 12px;
-    font-size: 16px;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
+/* Stile per il contenitore centrale */
 .hidden {
     display: none;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        left: -100%;
-    }
-    .sidebar.active {
-        left: 0;
-    }
-
-    .menu-btn {
-        top: 10px;
-        right: 10px;
-        padding: 8px;
-        font-size: 16px;
-    }
-
-    .main-content {
-        margin-top: 140px;
-    }
-
-    .logo-container img {
-        width: 100px;
-    }
 }
