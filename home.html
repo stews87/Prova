@@ -11,7 +11,7 @@
 <body>
     <div class="container">
 
-        <!-- Header con logo, info utente e tasto per aprire il menu -->
+        <!-- Header con logo, info utente e tasti per aprire il menu o fare logout -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
@@ -21,7 +21,9 @@
                 <p><strong>Nome Cognome</strong></p>
                 <p><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
+                <button class="menu-btn" onclick="toggleSidebar()">Menù</button> <!-- Aggiungi il bottone menu accanto al logout -->
             </div>
+        </header>
 
         <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
@@ -44,10 +46,7 @@
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
 
-        <!-- Tasto per aprire il menu -->
-        <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
-
-    </header>
+    </div>
 
     <!-- Script per il toggle della sidebar -->
     <script>
