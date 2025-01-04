@@ -148,48 +148,90 @@ body {
     background-color: #6cc6cb;
 }
 
-/* Media query per dispositivi mobili */
+/* Responsive Design per schermi più piccoli */
 @media (max-width: 768px) {
+
+    /* Header */
     .main-header {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-    }
-
-    .header-left {
-        position: static;
-        transform: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        margin-top: 10px;
-    }
-
-    .logo-container {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
-    }
-
-    .user-info-wrapper {
         text-align: center;
     }
 
-    .sidebar {
-        width: 200px;
+    .logo-container {
+        margin-bottom: 10px;
     }
 
-    .menu-btn {
-        padding: 8px;
-        font-size: 16px;
+    .user-info {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .logout-btn {
+        width: 100%;
+        /* Aumenta il pulsante di logout su dispositivi mobili */
+    }
+
+    /* Sidebar: Aggiungi un layout mobile-friendly */
+    .sidebar {
+        margin-top: 20px;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: -250px;
+        /* Nasconde la sidebar inizialmente */
+        height: 100%;
+        background-color: #2c3e50;
+        /* Sfondo scuro per contrasto */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        /* Ombra laterale per il menu */
+    }
+
+    .sidebar.active {
+        transform: translateX(250px);
+        /* Mostra la sidebar quando è attiva */
+    }
+
+    .sidebar ul {
+        text-align: center;
+    }
+
+    .sidebar li {
+        margin: 10px 0;
     }
 
     .main-content {
-        padding: 20px;
-        margin-top: 100px;
-        font-size: 18px;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    /* Aggiungi hamburger menu */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        color: #4CAF50;
+        margin-top: 10px;
+        z-index: 1000;
+    }
+
+    .hamburger-menu.open {
+        color: #16a085;
+        /* Cambia il colore quando il menu è aperto */
     }
 }
 
+/* Mobile extra small */
+@media (max-width: 480px) {
+    .logo {
+        width: 120px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
