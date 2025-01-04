@@ -1,12 +1,13 @@
 /* Corpo e sfondo con layout centrale */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* Contenitore principale */
@@ -23,14 +24,21 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    border-bottom: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
 }
 
 /* Logo nella parte sinistra dell'header */
 .logo-container .logo {
     width: 120px;
     height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-container .logo:hover {
+    transform: rotate(10deg);
 }
 
 /* Contenitore delle informazioni utente e bottoni */
@@ -48,18 +56,20 @@ body {
 }
 
 .logout-btn, .menu-btn {
-    background-color: #333;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 20px;
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logout-btn:hover, .menu-btn:hover {
-    background-color: #555;
+    background-color: #45a049;
+    transform: translateY(-2px);
 }
 
 /* Sidebar (menu laterale) */
@@ -72,6 +82,7 @@ body {
     left: -250px;
     top: 0;
     transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar.active {
@@ -87,6 +98,11 @@ body {
 .sidebar ul li {
     padding: 15px;
     border-bottom: 1px solid #444;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #575757;
 }
 
 .sidebar ul li a {
@@ -103,6 +119,12 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .close-btn:hover {
+    background-color: #666;
 }
 
 /* Contenuto principale */
@@ -112,11 +134,34 @@ body {
     background-color: white;
     flex-grow: 1;
     transition: margin-left 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .main-content h2 {
     font-size: 32px;
     color: #333;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Animazione di apparizione */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsività per dispositivi mobili */
