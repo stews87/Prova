@@ -8,9 +8,10 @@ body {
     background-size: cover; /* L'immagine copre tutta la pagina */
     background-position: center center; /* Centra l'immagine */
     background-attachment: fixed; /* L'immagine non si sposterà quando si scorre */
+    color: white; /* Testo bianco per contrasto */
 }
 
-/* Rendi il contenuto centrato */
+/* Contenitore della pagina */
 .container {
     display: flex;
     justify-content: center;
@@ -18,7 +19,7 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
-    padding-top: 60px; /* Aggiungi un po' di spazio in alto per evitare la sovrapposizione */
+    padding-top: 80px; /* Spazio sopra per evitare la sovrapposizione */
 }
 
 /* Header con logo e informazioni utente */
@@ -27,20 +28,23 @@ body {
     justify-content: space-between;
     align-items: center; /* Aggiungi allineamento centrale tra logo e info utente */
     width: 100%;
-    padding: 20px 50px;
-    background-color: rgba(255, 255, 255, 0.8); /* Sfondo leggermente trasparente */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000; /* Assicurati che l'header sia sopra il contenuto */
+    background-color: rgba(0, 0, 0, 0.5); /* Sfondo trasparente per l'header */
+    padding: 15px 50px;
 }
 
+/* Logo centrato */
 .logo-container img {
     width: 150px;
-    margin: 0 auto; /* Centra il logo */
+    display: block;
+    margin: 0 auto;
 }
 
+/* Informazioni utente a destra */
 .user-info {
     display: flex;
     justify-content: flex-end;
@@ -48,11 +52,7 @@ body {
     gap: 20px; /* Spazio tra Logout e informazioni */
 }
 
-.user-info p {
-    margin: 0;
-    font-size: 14px;
-}
-
+/* Bottoni e stile */
 .logout-btn {
     background-color: #4CAF50;
     color: white;
@@ -60,6 +60,7 @@ body {
     padding: 10px;
     cursor: pointer;
     font-size: 14px;
+    border-radius: 5px;
 }
 
 .logout-btn:hover {
@@ -106,8 +107,7 @@ body {
 /* Contenuto principale */
 .main-content {
     text-align: center;
-    margin-top: 100px; /* Per dare spazio sotto l'header */
-    color: white; /* Colore del testo bianco per visibilità */
+    margin-top: 100px; /* Distanza per far spazio all'header fisso */
 }
 
 h2 {
@@ -118,6 +118,7 @@ p {
     font-size: 18px;
 }
 
+/* Pulsante per aprire il menu */
 .menu-btn {
     position: fixed;
     top: 20px;
