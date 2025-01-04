@@ -1,3 +1,4 @@
+<!-- home.html -->
 <!DOCTYPE html>
 <html lang="it">
 
@@ -9,9 +10,17 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- Script di autenticazione -->
+    <script>
+        // Controlla se l'utente è autenticato
+        if (!localStorage.getItem('isAuthenticated')) {
+            // Se non autenticato, reindirizza alla pagina di login
+            window.location.href = 'index.html';
+        }
+    </script>
 
-        <!-- Header con logo, info utente e tasti per aprire il menu o fare logout -->
+    <!-- Contenuto della pagina home -->
+    <div class="container">
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
@@ -21,7 +30,6 @@
                 <p><strong>Nome Cognome</strong></p>
                 <p><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
-                <button class="menu-btn" onclick="toggleSidebar()">Menù</button> <!-- Aggiungi il bottone menu accanto al logout -->
             </div>
         </header>
 
@@ -36,7 +44,7 @@
                 <li><a href="pages/altri.html">Altri</a></li>
                 <li><a href="pages/file.html">File</a></li>
                 <li><a href="pages/chat.html">Chat</a></li>
-            </ul> 
+            </ul>
             <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
         </nav>
 
@@ -46,16 +54,16 @@
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
 
+        <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
     </div>
 
     <!-- Script per il toggle della sidebar -->
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
+            sidebar.classList.toggle('active');
         }
     </script>
-
 </body>
 
 </html>
