@@ -9,11 +9,57 @@ body {
     flex-direction: column;
 }
 
-/* Contenitore principale che contiene il contenuto e la sidebar */
+/* Contenitore principale */
 .container {
     display: flex;
     flex-direction: column;
     position: relative;
+}
+
+/* Header principale con logo e informazioni utente */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Logo nella parte sinistra dell'header */
+.logo-container .logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Contenitore delle informazioni utente e bottoni */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Bottone logout e menu in linea */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.logout-btn, .menu-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover, .menu-btn:hover {
+    background-color: #555;
 }
 
 /* Sidebar (menu laterale) */
@@ -49,6 +95,7 @@ body {
     display: block;
 }
 
+/* Bottone per chiudere la sidebar */
 .sidebar .close-btn {
     background-color: #444;
     color: white;
@@ -58,65 +105,27 @@ body {
     margin-top: 10px;
 }
 
-/* Header principale con logo e informazioni utente */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Sezione con le informazioni utente */
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.user-info p {
-    margin: 0;
-}
-
-/* Bottone di logout e menu accanto */
-.logout-btn, .menu-btn {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.menu-btn {
-    background-color: #333;
-}
-
-/* Contenuto principale della pagina */
+/* Contenuto principale */
 .main-content {
-    margin-left: 250px; /* Distanza dalla sidebar */
+    margin-left: 250px; /* Spazio per la sidebar */
     padding: 30px;
     background-color: white;
     flex-grow: 1;
+    transition: margin-left 0.3s ease;
 }
 
-/* Logo e informazioni utente */
-.logo-container .logo {
-    width: 120px;
-    height: auto;
-}
-
-.logout-btn {
-    background-color: #f44336;
-}
-
-.menu-btn {
-    background-color: #333;
+.main-content h2 {
+    font-size: 32px;
+    color: #333;
 }
 
 /* Responsività per dispositivi mobili */
 @media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .sidebar {
         width: 100%;
         height: 100vh;
@@ -130,11 +139,7 @@ body {
         margin-left: 0; /* Rimuove il margine della sidebar */
     }
 
-    .menu-btn {
-        display: block;
-    }
-
-    .user-info {
+    .buttons {
         flex-direction: column;
         gap: 10px;
     }
