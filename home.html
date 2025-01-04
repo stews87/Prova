@@ -10,20 +10,20 @@
 
 <body>
     <div class="container">
-        <!-- Header -->
+
+        <!-- Header con logo, info utente e tasto per aprire il menu -->
         <header class="main-header">
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
+
             <div class="user-info">
                 <p><strong>Nome Cognome</strong></p>
                 <p><strong>Codice Fiscale: XYZ123456789</strong></p>
                 <button onclick="window.location.href='index.html'" class="logout-btn">Logout</button>
             </div>
-            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
-        </header>
 
-        <!-- Sidebar -->
+        <!-- Sidebar (menu laterale) -->
         <nav class="sidebar">
             <ul>
                 <li><a href="pages/ultimo-cedolino.html">Ultimo cedolino</a></li>
@@ -34,25 +34,29 @@
                 <li><a href="pages/altri.html">Altri</a></li>
                 <li><a href="pages/file.html">File</a></li>
                 <li><a href="pages/chat.html">Chat</a></li>
-            </ul>
+            </ul> 
             <button class="close-btn" onclick="toggleSidebar()">Indietro</button>
         </nav>
 
-        <!-- Main Content -->
+        <!-- Contenuto principale -->
         <main class="main-content">
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
-    </div>
 
+        <!-- Tasto per aprire il menu -->
+        <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
+
+    </header>
+
+    <!-- Script per il toggle della sidebar -->
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active');
-            const mainContent = document.querySelector('.main-content');
-            mainContent.classList.toggle('shifted'); // Aggiungi classe per spostare il contenuto
+            sidebar.classList.toggle('active'); /* Attiva/disattiva la sidebar */
         }
     </script>
+
 </body>
 
 </html>
