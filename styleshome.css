@@ -5,14 +5,20 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #6fa3ef, #88d8f7);
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Container principale */
 .container {
     display: flex;
+    width: 100%;
+    max-width: 1200px; /* Limita la larghezza per desktop */
+    margin: 0 auto;
     flex-direction: row; /* Dispone la sidebar e il contenuto principale orizzontalmente */
     position: relative;
+    overflow: hidden;
 }
 
 /* Header */
@@ -20,8 +26,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 20px;
     width: 100%;
-    padding: 10px;
     background-color: white;
     z-index: 1001;
 }
@@ -31,7 +37,7 @@ body {
 }
 
 .logo {
-    width: 180px;
+    width: 150px;
     max-width: 100%;
     height: auto;
 }
@@ -46,7 +52,7 @@ body {
 }
 
 .logout-btn {
-    padding: 10px 20px;
+    padding: 8px 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -58,8 +64,9 @@ body {
     background-color: #45a049;
 }
 
-/* Tasto Menù (visibile su tutti i dispositivi) */
+/* Tasto Menù */
 .menu-btn {
+    display: block;
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
@@ -74,7 +81,6 @@ body {
     position: fixed;
     top: 0;
     left: -250px; /* Sidebar nascosta di default */
-    height: 100%;
     width: 250px;
     background-color: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -121,6 +127,18 @@ body {
     flex-grow: 1;
     padding: 20px;
     transition: margin-left 0.3s ease;
+    max-width: 100%;
+}
+
+.main-content h2 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #555;
 }
 
 .main-content.shifted {
@@ -141,5 +159,26 @@ body {
 
     .main-content.shifted {
         margin-left: 0; /* Il contenuto non si sposta su mobile */
+    }
+
+    .container {
+        flex-direction: column; /* Per mobile la sidebar e il contenuto sono uno sopra l'altro */
+    }
+
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-bottom: 10px;
+    }
+
+    .user-info {
+        text-align: center;
+    }
+
+    .menu-btn {
+        margin-top: 10px;
     }
 }
