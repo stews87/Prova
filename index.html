@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="it">
 
@@ -19,13 +20,11 @@
             <form id="login-form">
                 <div class="form-group">
                     <label for="username">Nome utente</label>
-                    <input type="text" id="username" name="username" required
-                        placeholder="Inserisci il tuo nome utente">
+                    <input type="text" id="username" name="username" required placeholder="Inserisci il tuo nome utente">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required
-                        placeholder="Inserisci la tua password">
+                    <input type="password" id="password" name="password" required placeholder="Inserisci la tua password">
                 </div>
                 <button type="submit">Accedi</button>
             </form>
@@ -57,7 +56,7 @@
                 messageElement.className = "success";
                 messageElement.classList.remove("hidden");
 
-                // Salva l'autenticazione nello storage
+                // Imposta l'autenticazione nel localStorage
                 localStorage.setItem('isAuthenticated', 'true');
 
                 // Dopo 2 secondi, redirigi l'utente alla pagina home
