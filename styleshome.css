@@ -26,15 +26,15 @@ body {
 .main-header {
     position: relative;
     width: 100%;
-    padding: 100px 0;
+    height: 150px;
     z-index: 1000;
     box-sizing: border-box;
 }
 
-/* Sezione sinistra: info utente e logout */
-.header-left {
+/* Sezione destra: info utente e logout */
+.header-right {
     position: absolute;
-    left: 50px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
