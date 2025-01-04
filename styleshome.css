@@ -12,7 +12,7 @@ body {
 /* Contenitore principale che contiene il contenuto e la sidebar */
 .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     position: relative;
 }
 
@@ -58,19 +58,6 @@ body {
     margin-top: 10px;
 }
 
-/* Menu hamburger (tasto per aprire la sidebar) */
-.menu-btn {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    position: absolute;
-    top: 20px;
-    right: 20px; /* Posiziona il bottone a destra */
-    cursor: pointer;
-    z-index: 1000; /* Assicura che il bottone sia visibile sopra gli altri elementi */
-}
-
 /* Header principale con logo e informazioni utente */
 .main-header {
     display: flex;
@@ -82,8 +69,28 @@ body {
 }
 
 /* Sezione con le informazioni utente */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .user-info p {
     margin: 0;
+}
+
+/* Bottone di logout e menu accanto */
+.logout-btn, .menu-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-btn {
+    background-color: #333;
 }
 
 /* Contenuto principale della pagina */
@@ -102,11 +109,10 @@ body {
 
 .logout-btn {
     background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-weight: bold;
+}
+
+.menu-btn {
+    background-color: #333;
 }
 
 /* Responsività per dispositivi mobili */
@@ -129,6 +135,7 @@ body {
     }
 
     .user-info {
-        display: none;
+        flex-direction: column;
+        gap: 10px;
     }
 }
