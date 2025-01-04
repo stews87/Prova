@@ -66,8 +66,9 @@ body {
     border: none;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 20px; /* Posiziona il bottone a destra */
     cursor: pointer;
+    z-index: 1000; /* Assicura che il bottone sia visibile sopra gli altri elementi */
 }
 
 /* Header principale con logo e informazioni utente */
