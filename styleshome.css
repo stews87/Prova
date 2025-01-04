@@ -122,6 +122,12 @@ body {
     padding: 20px;
     max-width: 800px;
     box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+}
+
+/* Sposta il contenuto quando la sidebar è attiva */
+.sidebar.active ~ .main-content {
+    margin-left: 250px;
 }
 
 h2 {
@@ -154,4 +160,35 @@ p {
 /* Stile per il contenitore centrale */
 .hidden {
     display: none;
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-info {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar.active ~ .main-content {
+        margin-left: 200px;
+    }
+
+    .menu-btn {
+        top: 10px;
+        right: 10px;
+    }
+
+    .main-content {
+        padding: 10px;
+        margin-top: 100px;
+    }
 }
