@@ -1,9 +1,9 @@
 /* Impostiamo il background dell'intera pagina */
 body {
     font-family: 'Arial', sans-serif;
-    margin: 20;
-    padding: 20;
-    height: auto;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     background-image: url('Consulenza.jpg');
     background-size: cover;
     background-position: center center;
@@ -16,26 +16,53 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
-/* Logo */
+
+/* Header principale */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Logo centrato */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .logo-container img {
-    width: 250px;
-    align-self: center;
+    width: 200px;
+}
+
+/* Wrapper delle informazioni utente */
+.user-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Informazioni utente */
 .user-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    text-align: center;
     color: white;
 }
 
-/* Bottoni */
+/* Pulsante logout */
 .logout-btn {
     background-color: #4CAF50;
     color: white;
@@ -44,7 +71,6 @@ body {
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
-    align-self: self-end;
 }
 
 .logout-btn:hover {
@@ -104,16 +130,17 @@ body {
 /* Contenuto principale */
 .main-content {
     text-align: center;
-    margin: 120px auto 0 auto;
+    margin: 20px auto 0 auto;
     padding: 20px;
     max-width: 800px;
     box-sizing: border-box;
-    transition: margin-left 0.3s ease;
 }
 
 /* Pulsante per aprire il menu */
 .menu-btn {
-    align-self: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -128,34 +155,23 @@ body {
     background-color: #33c03e;
 }
 
-/* Stile per il contenitore centrale */
-.hidden {
-    display: none;
-}
-
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
     .main-header {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 10px 0;
     }
 
-    .user-info {
-        justify-content: center;
-        gap: 10px;
+    .user-info-wrapper {
+        gap: 5px;
     }
 
     .sidebar {
         width: 200px;
     }
 
-    .sidebar.active ~ .main-content {
-        margin-left: 200px;
-    }
-
     .menu-btn {
-        top: 10px;
-        right: 10px;
+        padding: 8px;
+        font-size: 16px;
     }
 
     .main-content {
