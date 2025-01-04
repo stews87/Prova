@@ -45,6 +45,12 @@ body {
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .logo-container img {
+        width: 100px;
+    }
+}
+
 /* Informazioni utente a destra */
 .user-info {
     display: flex;
@@ -131,10 +137,30 @@ p {
     cursor: pointer;
     font-size: 18px;
     z-index: 1000;
+    transition: transform 0.3s ease;
 }
 
 .menu-btn:hover {
     background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Pulsante per chiudere la sidebar */
+.close-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
 }
 
 /* Altri stili */
