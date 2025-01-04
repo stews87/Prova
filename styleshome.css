@@ -9,7 +9,7 @@ body {
     background-position: center center;
     background-attachment: fixed;
     color: white;
-    overflow-x: hidden; /* Evita lo scroll orizzontale */
+    overflow-x: hidden;
 }
 
 /* Contenitore della pagina */
@@ -24,36 +24,37 @@ body {
 
 /* Header principale */
 .main-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     width: 100%;
     padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
-/* Logo centrato */
-.logo-container img {
-    width: 150px;
-    margin-bottom: 10px;
-}
-
-/* Wrapper delle informazioni utente */
-.user-info-wrapper {
+/* Sezione sinistra: info utente e logout */
+.header-left {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 }
 
-/* Informazioni utente */
-.user-info {
+/* Logo centrato */
+.logo-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.logo-container img {
+    width: 150px;
 }
 
 /* Pulsante logout */
@@ -166,4 +167,5 @@ body {
     .menu-btn {
         padding: 8px;
         font-size: 16px;
-   
+    }
+}
