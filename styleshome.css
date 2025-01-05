@@ -187,9 +187,9 @@ body {
 
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
-    /* Riduci dimensione del logo */
-    .logo-container img {
-        width: 150px;
+    /* No logo */
+    .logo-container {
+        display: none;
     }
 
     /* Riduci la dimensione dei testi nelle info utente */
