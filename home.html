@@ -67,11 +67,22 @@
 
     <!-- Script per il toggle della sidebar -->
     <script>
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.classList.toggle('active');
-        }
-    </script>
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        const headerLeft = document.querySelector('.header-left');
+        const logoContainer = document.querySelector('.logo-container');
+        const menuBtn = document.querySelector('.menu-btn');
+
+        // Attiva/disattiva la sidebar
+        sidebar.classList.toggle('active');
+
+        // Nasconde/mostra logo, info utente e tasto menu
+        headerLeft.classList.toggle('hide');
+        logoContainer.classList.toggle('hide');
+        menuBtn.classList.toggle('hide');
+    }
+</script>
+
 </body>
 
 </html>
