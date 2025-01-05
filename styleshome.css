@@ -125,7 +125,7 @@ body {
 /* Pulsante per aprire il menu */
 .menu-btn {
     position: fixed;
-    bottom: 20px;
+    bottom: 200px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #4CAF50;
@@ -140,6 +140,49 @@ body {
 
 .menu-btn:hover {
     background-color: #6cc6cb;
+}
+
+/* Pulsanti della sidebar */
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effetto al passaggio del mouse */
+.sidebar ul li a:hover {
+    background-color: #4CAF50;
+    transform: scale(1.05);
+    color: #000;
+}
+
+/* Aggiunta di icone accanto al testo */
+.sidebar ul li a::before {
+    content: "🔹";
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+/* Pulsante per chiudere il menu */
+.close-btn {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Effetto al passaggio del mouse sul pulsante di chiusura */
+.close-btn:hover {
+    background-color: #ff0000;
+    transform: scale(1.05);
 }
 
 /* Media query per dispositivi mobili */
