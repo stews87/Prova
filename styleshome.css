@@ -125,7 +125,9 @@ body {
 /* Pulsante per aprire il menu */
 .menu-btn {
     position: fixed;
-    top: 600px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -151,7 +153,7 @@ body {
     }
 
     .menu-btn {
-        padding: 8px;
-        font-size: 16px;
+        padding: 12px;
+        font-size: 20px;
     }
 }
