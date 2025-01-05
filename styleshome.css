@@ -109,6 +109,11 @@ body {
     background-color: #4CAF50;
 }
 
+/* Nasconde logo, info utente e tasto menu quando la sidebar è attiva */
+.hide {
+    display: none;
+}
+
 /* Pulsante per chiudere il menu */
 .close-btn {
     background-color: #4CAF50;
