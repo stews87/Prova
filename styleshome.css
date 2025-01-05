@@ -187,20 +187,35 @@ body {
 
 /* Media query per dispositivi mobili */
 @media (max-width: 768px) {
-    .main-header {
-        padding: 10px 0;
-    }
-    
-   .logo-container {
-        display: none;
-    }
-    
-    .sidebar {
-        width: 200px;
+    /* Riduci dimensione del logo */
+    .logo-container img {
+        width: 150px;
     }
 
+    /* Riduci la dimensione dei testi nelle info utente */
+    .user-info-wrapper p {
+        font-size: 12px;
+    }
+
+    /* Riduci dimensione del pulsante logout */
+    .logout-btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    /* Posiziona il pulsante Menù più in basso e centrato */
     .menu-btn {
-        padding: 12px;
-        font-size: 20px;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    /* Riduci padding del contenuto principale */
+    .main-content {
+        padding: 50px 20px;
+        font-size: 18px;
     }
 }
+
