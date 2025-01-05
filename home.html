@@ -11,9 +11,8 @@
 <body>
     <!-- Script di autenticazione -->
     <script>
-        // Controlla se l'utente è autenticato
         if (!localStorage.getItem('isAuthenticated')) {
-            window.location.href = 'index.html'; // Reindirizza se non autenticato
+            window.location.href = 'index.html';
         }
     </script>
 
@@ -23,7 +22,7 @@
         <!-- Header con logo, info utente e tasto per aprire il menu -->
         <header class="main-header">
             <!-- Sezione destra: info utente e logout -->
-            <div class="header-left">
+            <div class="header-right">
                 <div class="user-info-wrapper">
                     <div class="user-info">
                         <p><strong>Nome Cognome</strong></p>
@@ -37,6 +36,9 @@
             <div class="logo-container">
                 <img src="Logo.jpg" alt="Logo" class="logo">
             </div>
+
+            <!-- Tasto per aprire il menu -->
+            <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
         </header>
 
         <!-- Sidebar (menu laterale) -->
@@ -59,26 +61,15 @@
             <h2>Benvenuto nella tua Home Page</h2>
             <p>Questa è la pagina principale del nostro sito. Puoi accedere a tutte le funzionalità da qui.</p>
         </main>
-
-        <!-- Tasto per aprire il menu -->
-        <button class="menu-btn" onclick="toggleSidebar()">Menù</button>
     </div>
 
     <!-- Script per il toggle della sidebar -->
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            const headerLeft = document.querySelector('.header-left');
-            const logoContainer = document.querySelector('.logo-container');
-            const menuBtn = document.querySelector('.menu-btn');
-
-            // Attiva/disattiva la sidebar
+            const header = document.querySelector('.main-header');
             sidebar.classList.toggle('active');
-
-            // Nasconde/mostra le sezioni durante l'apertura/chiusura della sidebar
-            if (headerLeft) headerLeft.classList.toggle('hide');
-            if (logoContainer) logoContainer.classList.toggle('hide');
-            if (menuBtn) menuBtn.classList.toggle('hide');
+            header.classList.toggle('hide');
         }
     </script>
 </body>
