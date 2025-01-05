@@ -162,7 +162,7 @@ body {
 
 /* Aggiunta di icone accanto al testo */
 .sidebar ul li a::before {
-    content: "🔹";
+    content: "💠";
     margin-right: 10px;
     font-size: 14px;
 }
@@ -190,7 +190,11 @@ body {
     .main-header {
         padding: 10px 0;
     }
-
+    
+   .logo-container {
+        display: none;
+    }
+    
     .sidebar {
         width: 200px;
     }
