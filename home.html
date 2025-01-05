@@ -13,8 +13,7 @@
     <script>
         // Controlla se l'utente è autenticato
         if (!localStorage.getItem('isAuthenticated')) {
-            // Se non autenticato, reindirizza alla pagina di login
-            window.location.href = 'index.html';
+            window.location.href = 'index.html'; // Reindirizza se non autenticato
         }
     </script>
 
@@ -24,7 +23,7 @@
         <!-- Header con logo, info utente e tasto per aprire il menu -->
         <header class="main-header">
             <!-- Sezione destra: info utente e logout -->
-            <div class="header-right">
+            <div class="header-left">
                 <div class="user-info-wrapper">
                     <div class="user-info">
                         <p><strong>Nome Cognome</strong></p>
@@ -67,22 +66,21 @@
 
     <!-- Script per il toggle della sidebar -->
     <script>
-    function toggleSidebar() {
-        const sidebar = document.querySelector('.sidebar');
-        const headerLeft = document.querySelector('.header-left');
-        const logoContainer = document.querySelector('.logo-container');
-        const menuBtn = document.querySelector('.menu-btn');
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const headerLeft = document.querySelector('.header-left');
+            const logoContainer = document.querySelector('.logo-container');
+            const menuBtn = document.querySelector('.menu-btn');
 
-        // Attiva/disattiva la sidebar
-        sidebar.classList.toggle('active');
+            // Attiva/disattiva la sidebar
+            sidebar.classList.toggle('active');
 
-        // Nasconde/mostra logo, info utente e tasto menu
-        headerLeft.classList.toggle('hide');
-        logoContainer.classList.toggle('hide');
-        menuBtn.classList.toggle('hide');
-    }
-</script>
-
+            // Nasconde/mostra le sezioni durante l'apertura/chiusura della sidebar
+            if (headerLeft) headerLeft.classList.toggle('hide');
+            if (logoContainer) logoContainer.classList.toggle('hide');
+            if (menuBtn) menuBtn.classList.toggle('hide');
+        }
+    </script>
 </body>
 
 </html>
