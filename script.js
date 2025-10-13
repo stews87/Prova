@@ -14,4 +14,3 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   alert('Messaggio inviato! (inserisci la logica per l\'invio e-mail o API)');
   this.reset();
 });
-
