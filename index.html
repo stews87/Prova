@@ -1,75 +1,212 @@
-<!-- index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benvenuto!</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Studio Dott.ssa Castrovinci Evelin — Consulente del Lavoro</title>
+  <meta name="description"
+    content="Consulenza del lavoro, elaborazione cedolini, adempimenti e conteggi per vertenze. Studio Castrovinci Evelin — Capri Leone (Messina)." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <div class="background-container">
-        <div class="welcome-container">
-            <img src="Logo.jpg" alt="Logo" class="logo">
-            <h1>Benvenuto nella nostra applicazione!</h1>
-            <p>Per favore, inserisci le tue credenziali per accedere.</p>
-
-            <!-- Form di login -->
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username">Nome utente</label>
-                    <input type="text" id="username" name="username" required placeholder="Inserisci il tuo nome utente">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Inserisci la tua password">
-                </div>
-                <button type="submit">Accedi</button>
-            </form>
-
-            <!-- Messaggio di errore o successo -->
-            <p id="message" class="hidden"></p>
-        </div>
+  <header>
+    <div class="topbar container">
+      <div>
+        <a href="https://www.linkedin.com/in/evelin-castrovinci" target="_blank" aria-label="LinkedIn">
+          <img src="images/icon-linkedin.svg" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com/tuoprofilo" target="_blank" aria-label="Instagram">
+          <img src="images/icon-instagram.png" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://www.facebook.com/tuopagina" target="_blank" aria-label="Facebook">
+          <img src="images/icon-facebook.svg" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.facebook.com/tuopagina" target="_blank" aria-label="WhatsApp">
+          <img src="images/whatsapp-icon1.png" alt="WhatsApp" class="social-icon">
+        </a>
+        <a href="https://www.facebook.com/tuopagina" target="_blank" aria-label="x">
+          <img src="images/x-icon.webp" alt="x" class="social-icon">
+      </div>
     </div>
 
-    <script>
-        // Funzione per gestire il login
-        document.getElementById("login-form").addEventListener("submit", function (event) {
-            event.preventDefault(); // Evita il comportamento di submit del form
 
-            // Ottieni i valori inseriti dall'utente
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
+    <div class="container header-main">
+      <!-- LOGO + NOME STUDIO -->
+      <div class="brand">
+        <img src="images/logo.png" alt="Studio Castrovinci Evelin" class="logo">
+        <span>STUDIO CASTROVINCI EVELIN</span>
+      </div>
 
-            // Definisci le credenziali corrette
-            const correctUsername = "Stefano";
-            const correctPassword = "1";
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#studio">Studio</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#blog">Blog</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
 
-            // Trova il messaggio di errore/successo
-            const messageElement = document.getElementById("message");
+  <!-- HERO SECTION CON IMMAGINE DI SFONDO -->
+  <section class="hero">
+    <div class="hero-card hero-overlay">
+      <h1>Consulenza del lavoro — Studio Dott.ssa Castrovinci Evelin</h1>
+      <p class="lead">
+        Supportiamo aziende e professionisti in tutte le fasi del rapporto di lavoro:
+        dall'assunzione alla cessazione, gestione cedolini, adempimenti e pratiche per vertenze.
+      </p>
+      <ul>
+        <li>Elaborazione cedolini paga</li>
+        <li>Adempimenti periodici e annuali</li>
+        <li>Conteggi per vertenze e relazioni sindacali</li>
+      </ul>
+      <a class="cta" href="#contatti">Richiedi una consulenza</a>
+    </div>
 
-            // Controlla le credenziali
-            if (username === correctUsername && password === correctPassword) {
-                messageElement.textContent = "Accesso riuscito! Benvenuto, " + username + "!";
-                messageElement.className = "success";
-                messageElement.classList.remove("hidden");
+    <aside class="hero-card">
+      <h3>Richiedi informazioni</h3>
+      <p class="small">Rispondiamo rapidamente via telefono o email.</p>
 
-                // Imposta l'autenticazione nel localStorage
-                localStorage.setItem('isAuthenticated', 'true');
+      <div class="contact-info">
+        <div><strong>Telefono</strong><br><span class="small">+39 329 4868367</span></div>
+        <div style="margin-top:12px"><strong>E-mail</strong><br><span
+            class="small">cdl.evelincastrovinci@gmail.com</span></div>
+      </div>
 
-                // Dopo 2 secondi, redirigi l'utente alla pagina home
-                setTimeout(function () {
-                    window.location.href = "home.html";  // Redirige alla pagina home
-                }, 2000); // Il ritardo è di 2 secondi per visualizzare il messaggio di successo
-            } else {
-                messageElement.textContent = "Credenziali errate. Riprova.";
-                messageElement.className = "error";
-                messageElement.classList.remove("hidden");
-            }
-        });
-    </script>
+      <form id="quickForm">
+        <div><input type="text" placeholder="Nome e cognome" required></div>
+        <div><input type="email" placeholder="Email" required></div>
+        <div>
+          <select required>
+            <option>Servizio richiesto</option>
+            <option>Elaborazione cedolini paga</option>
+            <option>Adempimenti periodici</option>
+            <option>Conteggi per vertenze</option>
+          </select>
+        </div>
+        <div><button type="submit" class="cta" style="width:100%">Invia richiesta</button></div>
+        <div class="small">Accetto l'informativa sulla privacy.</div>
+      </form>
+    </aside>
+  </section>
+
+  <main class="container">
+    <section id="servizi">
+      <h2>I nostri servizi</h2>
+      <div class="services">
+        <article class="service">
+          <h4>Elaborazione cedolini paga</h4>
+          <p class="small">Gestione buste paga per dipendenti e collaboratori, incluse trattenute e dichiarazioni
+            obbligatorie.</p>
+        </article>
+        <article class="service">
+          <h4>Adempimenti periodici</h4>
+          <p class="small">(UNIEMENS, F24, CU, Mod.770) e pratiche annuali INAIL/INPS.</p>
+        </article>
+        <article class="service">
+          <h4>Conteggi per vertenze</h4>
+          <p class="small">Relazioni e conteggi per contenziosi di lavoro da presentare in sede giudiziale.</p>
+        </article>
+        <article class="service">
+          <h4>Relazioni sindacali</h4>
+          <p class="small">Supporto nella gestione dei rapporti con le organizzazioni sindacali e negoziazioni.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="small">Anni di attività</div>
+        <h3>—</h3>
+        <div class="small">Professionalità consolidata</div>
+      </div>
+      <div class="stat">
+        <div class="small">Clienti</div>
+        <h3>—</h3>
+        <div class="small">Aziende e professionisti</div>
+      </div>
+      <div class="stat">
+        <div class="small">Team</div>
+        <h3>—</h3>
+        <div class="small">Consulenti esperti</div>
+      </div>
+    </section>
+
+    <section id="blog">
+      <h2>Dal nostro blog</h2>
+      <div class="blog-grid">
+        <article class="post">
+          <h4>La contribuzione obbligatoria</h4>
+          <p class="small">Breve guida sulle contribuzioni per categorie particolari e come gestirle correttamente.</p>
+          <a class="small" href="#">Approfondisci →</a>
+        </article>
+        <article class="post">
+          <h4>Contratto a termine per stagionali</h4>
+          <p class="small">Quando è utile, limiti e vantaggi per le aziende stagionali.</p><a class="small"
+            href="#">Approfondisci →</a>
+        </article>
+        <article class="post">
+          <h4>Conteggio vertenze: a chi rivolgersi</h4>
+          <p class="small">Come preparare la documentazione e quando chiedere assistenza professionale.</p><a
+            class="small" href="#">Approfondisci →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h3>Cosa dicono di noi</h3>
+      <blockquote>“Professionali e puntuali: ci affidiamo al loro studio da anni.”<br><span class="small">—
+          Andrea</span></blockquote>
+      <blockquote>“Rapporto chiaro e trasparente, consigliati.”<br><span class="small">— Simone</span></blockquote>
+    </section>
+
+    <section id="contatti">
+      <h2>Contatti</h2>
+      <div class="contact-area">
+        <div class="hero-card">
+          <h4>Studio Castrovinci Evelin — Consulente del Lavoro</h4>
+          <p class="small">Via SS. Annunziata, snc — 98070 Capri Leone (Messina)</p>
+          <p class="small">Tel: +39 329 4868367 — cdl.evelincastrovinci@gmail.com</p>
+          <p class="small">Orari: Lun–Ven 10:00–20:00</p>
+        </div>
+        <div class="hero-card">
+          <h4>Scrivici</h4>
+          <form id="contactForm">
+            <div><input name="name" placeholder="Nome e cognome" required></div>
+            <div><input name="email" type="email" placeholder="Email" required></div>
+            <div><input name="phone" placeholder="Telefono (opz.)"></div>
+            <div><select name="service">
+                <option>Servizio richiesto</option>
+                <option>Consulenza</option>
+                <option>Cedolini paga</option>
+                <option>Vertenze</option>
+              </select></div>
+            <div><textarea name="message" placeholder="Messaggio"></textarea></div>
+            <div><button class="cta" type="submit" style="width:100%">Invia messaggio</button></div>
+            <div class="small">Accetto l'informativa sulla privacy.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-main">
+      <div class="brand">STUDIO CASTROVINCI EVELIN</div>
+      <div class="small">© <span id="year"></span> Studio Castrovinci Evelin — Consulente del Lavoro • Tutti i diritti
+        riservati</div>
+    </div>
+  </footer>
+
+  <!-- 🔹 Bottone WhatsApp fisso -->
+  <a href="https://wa.me/393294868367" class="whatsapp-float" target="_blank" aria-label="Chatta su WhatsApp">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon">
+  </a>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
+
