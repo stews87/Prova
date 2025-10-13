@@ -1,128 +1,326 @@
-/* Imposta il background e la posizione centrale del contenuto */
+:root {
+  --accent: #507e5b;
+  --muted: #666;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --radius: 12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #6fa3ef, #88d8f7);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+  line-height: 1.45;
 }
 
-.background-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* === HEADER TRASPARENTE SOPRA LA HERO === */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(230, 238, 249, 0.3);
+  z-index: 10;
 }
 
-#pdfEmbed {
-    width: 30vw;
-    /* Imposta la larghezza al 100% della finestra del browser (viewport) */
-    height: 80vh;
-    /* Imposta l'altezza al 100% della finestra del browser */
-    border: none;
-    /* Rimuove il bordo */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
-.welcome-container {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    box-sizing: border-box;
-    animation: slideUp 0.5s ease-in-out;
+.topbar a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 12px;
 }
 
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* === HEADER MAIN === */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h1 {
-    color: #4CAF50;
-    font-size: 24px;
-    margin-top: 20px;
+.header-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 30px;
+/* === BRAND CON LOGO === */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 20px;
+  margin-left: -380px;
+  font-family: "Perpetua", "Times New Roman", "Georgia", serif;
+  letter-spacing: 0.5px;
 }
 
 .logo {
-    width: 250px;
-    margin-bottom: 20px;
+  height: 120px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-top: -40px;
 }
 
-form {
-    display: flex;
+/* === MENU === */
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: rgba(240, 247, 255, 0.5);
+  color: var(--accent);
+}
+
+/* === HERO CON SFONDO IMMAGINE === */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  align-items: center;
+  padding: 140px 0 100px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.25), rgba(246, 248, 251, 0.35)),
+    url("images/hero-bg.jpg") center/cover no-repeat;
+  z-index: 0;
+  opacity: 1;
+}
+
+/* === CARD PRINCIPALE E FORM PIÙ TRASPARENTI === */
+.hero-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(15, 40, 80, 0.04);
+  padding: 28px;
+  backdrop-filter: blur(10px);
+}
+
+/* === TESTI HERO === */
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: #0f4ca5;
+}
+
+/* === SERVIZI === */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.service {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(12, 30, 60, 0.04);
+}
+
+/* === STATISTICHE === */
+.stats {
+  display: flex;
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.stat {
+  flex: 1;
+  background: linear-gradient(180deg, #fff, #f8fbff);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+/* === BLOG === */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.post {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+}
+
+/* === TESTIMONIANZE === */
+.testimonials {
+  background: linear-gradient(90deg, #fbfdff, #fff);
+  padding: 18px;
+  border-radius: 12px;
+  margin-top: 18px;
+}
+
+/* === FOOTER === */
+footer {
+  margin-top: 28px;
+  padding: 24px 0;
+  background: #fff;
+  border-top: 1px solid #e6eef9;
+}
+
+/* === FORM === */
+form .row {
+  display: flex;
+  gap: 8px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e0e6ef;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* === RESPONSIVE === */
+@media(max-width:880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 0 60px;
+  }
+
+  .topbar {
     flex-direction: column;
-}
+    align-items: flex-start;
+    gap: 6px;
+  }
 
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-input {
-    padding: 10px;
-    font-size: 16px;
+  .nav-links {
+    order: 2;
     width: 100%;
-    margin: 5px 0 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 60px;
+    margin-left: -4px;
+    margin-top: 0;
+  }
 }
 
-input:focus {
-    border-color: #4CAF50;
-    outline: none;
+/* === BOTTONE WHATSAPP FISSO === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: #25D366;
+  /* colore ufficiale WhatsApp */
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  z-index: 99;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-button {
-    padding: 12px;
-    font-size: 16px;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-button:hover {
-    background-color: #45a049;
+.whatsapp-icon {
+  width: 34px;
+  height: 34px;
+  filter: brightness(0) invert(1);
 }
 
-.hidden {
-    display: none;
+/* === SOCIAL ICONS SEMPRE VISIBILI === */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 12px;
+  vertical-align: middle;
+  filter: none;
+  /* 🔥 sempre a colori */
+  transition: transform 0.2s ease;
 }
 
-#error {
-    color: red;
-}
-
-#success {
-    color: green;
+.social-icon:hover {
+  transform: scale(1.1);
 }
