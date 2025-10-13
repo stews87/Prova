@@ -341,12 +341,12 @@ textarea {
   }
 
   .logo {
-    height: 70px;
+    height: 10%;
     margin: 0;
   }
 
   .brand span {
-    font-size: 18px;
+    font-size: 11px;
     font-weight: 600;
     color: var(--accent);
     text-decoration: none;
@@ -356,13 +356,13 @@ textarea {
   .socials {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 11px;
     width: 100%;
   }
 
   .social-icon {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
     margin: 0;
     opacity: 1;
     transform: none;
