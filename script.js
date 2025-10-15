@@ -14,3 +14,11 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   alert('Messaggio inviato! (inserisci la logica per l\'invio e-mail o API)');
   this.reset();
 });
+
+// === MOSTRA/NASCONDE MENU SU MOBILE ===
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
