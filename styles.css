@@ -21,10 +21,10 @@ body {
 /* === HEADER TRASPARENTE SOPRA LA HERO === */
 header {
   position: absolute;
-  top: 0;
+  top: 1%;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(230, 238, 249, 0.3);
   z-index: 10;
@@ -32,7 +32,7 @@ header {
 
 .topbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 8px 20px;
   font-size: 14px;
@@ -64,16 +64,14 @@ header {
 /* === BRAND CON LOGO === */
 .brand {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   font-weight: 700;
   color: var(--accent);
   font-size: 20px;
   margin-left: -380px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  letter-spacing: 0.5px;
-  pointer-events: none;
-  text-decoration: none;
+  letter-spacing: 0.9px;
 }
 
 
@@ -82,7 +80,7 @@ header {
   width: auto;
   vertical-align: middle;
   margin-right: 8px;
-  margin-top: -40px;
+  margin-top: -80px;
 }
 
 /* === MENU === */
@@ -131,9 +129,9 @@ header {
 .hero-card {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius);
-  box-shadow: 0 6px 20px rgba(15, 40, 80, 0.04);
+  box-shadow: 0 6px 20px rgba(15, 40, 80, 0.03);
   padding: 28px;
   backdrop-filter: blur(10px);
 }
@@ -253,7 +251,7 @@ textarea {
 
 .small {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 /* === BOTTONE WHATSAPP FISSO === */
