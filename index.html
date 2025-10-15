@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <!-- SOCIAL TOPBAR (solo desktop) -->
+    <!-- 🔹 Topbar social (desktop) -->
     <div class="topbar container">
       <div>
         <a href="https://www.linkedin.com/in/evelin-castrovinci-335552199" target="_blank" aria-label="LinkedIn">
@@ -21,28 +21,29 @@
         <a href="https://www.instagram.com/studio_castrovinci.evelin" target="_blank" aria-label="Instagram">
           <img src="images/icon-instagram.png" alt="Instagram" class="social-icon">
         </a>
-        <a href="https://www.facebook.com/share/17JTicA5ha/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/share/17JTicA5ha" target="_blank" aria-label="Facebook">
           <img src="images/icon-facebook.svg" alt="Facebook" class="social-icon">
         </a>
         <a href="https://wa.me/3909411830802" target="_blank" aria-label="WhatsApp">
           <img src="images/whatsapp-icon1.png" alt="WhatsApp" class="social-icon">
         </a>
-        <a href="#" target="_blank" aria-label="x">
-          <img src="images/x-icon.webp" alt="x" class="social-icon">
+        <a href="#" target="_blank" aria-label="X">
+          <img src="images/x-icon.webp" alt="X" class="social-icon">
         </a>
       </div>
     </div>
 
-    <!-- HEADER PRINCIPALE -->
+    <!-- 🔹 Header con logo + menu -->
     <div class="container header-main">
-      <!-- LOGO + NOME -->
       <div class="brand">
         <img src="images/logo.png" alt="Studio Castrovinci Evelin" class="logo">
         <small>STUDIO CASTROVINCI EVELIN - </small>
         <small>Consulenza del Lavoro</small>
       </div>
 
-      <!-- NAV -->
+      <!-- Bottone hamburger (solo mobile) -->
+      <button class="menu-toggle" aria-label="Apri/Chiudi menu">☰</button>
+
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#">Home</a>
         <a href="#studio">Studio</a>
@@ -50,13 +51,10 @@
         <a href="#blog">Blog</a>
         <a href="#contatti">Contatti</a>
       </nav>
-
-      <!-- HAMBURGER SOLO MOBILE -->
-      <button class="menu-toggle" aria-label="Apri menu">☰</button>
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- 🔹 Hero section -->
   <section class="hero">
     <div class="hero-card hero-overlay">
       <ul>
@@ -67,16 +65,18 @@
         <li>Gestione delle Presenze e Controllo Accessi</li>
         <li>Consulenza Giuslavoristica e Relazioni Sindacali</li>
         <li>Gestione Crisi Aziendale e Riorganizzazioni</li>
-        <li>Servizi per Collaboratoti Domestici (Colf e Badanti)</li>
+        <li>Servizi per Collaboratori Domestici (Colf e Badanti)</li>
         <li>Formazione e Aggiornamento Professionale</li>
         <li>Servizi di Certificazione e Conciliazione</li>
       </ul>
+
       <a class="cta" href="#contatti">Richiedi una consulenza</a>
     </div>
 
     <aside class="hero-card">
       <h3>Richiedi informazioni</h3>
       <p class="small">Risposta rapida via telefono o email.</p>
+
       <div class="contact-info">
         <div><strong>Telefono</strong><br><span class="small">+39 329 4868367</span></div>
         <div style="margin-top:12px"><strong>E-mail</strong><br><span
@@ -96,7 +96,7 @@
             <option>Gestione delle Presenze</option>
             <option>Consulenza Giuslavoristica e Relazioni Sindacali</option>
             <option>Gestione Crisi Aziendale e Riorganizzazioni</option>
-            <option>Servizi per Collaboratoti Domestici</option>
+            <option>Servizi per Collaboratori Domestici</option>
             <option>Formazione e Aggiornamento Professionale</option>
             <option>Servizi di Certificazione e Conciliazione</option>
           </select>
@@ -107,8 +107,8 @@
     </aside>
   </section>
 
+  <!-- 🔹 Main content -->
   <main class="container">
-    <!-- SERVIZI -->
     <section id="servizi">
       <h2>I nostri servizi</h2>
       <div class="services">
@@ -119,7 +119,8 @@
         </article>
         <article class="service">
           <h4>Gestione Contratti di Lavoro</h4>
-          <p class="small">Redazione e gestione di contratti individuali e collettivi, inquadramento secondo i CCNL.</p>
+          <p class="small">Redazione e gestione di contratti individuali e collettivi, inquadramento secondo i CCNL,
+            con attenzione alle normative vigenti.</p>
         </article>
         <article class="service">
           <h4>Conteggi per vertenze</h4>
@@ -127,8 +128,8 @@
         </article>
         <article class="service">
           <h4>Adempimenti Previdenziali</h4>
-          <p class="small">Iscrizione e gestione delle posizioni IMPS e INAIL, consulenza su autoliquidazione
-            e premi assicurativi.</p>
+          <p class="small">Iscrizione e gestione delle posizioni INPS e INAIL, con consulenza su autoliquidazione
+            e gestione dei premi assicurativi.</p>
         </article>
         <article class="service">
           <h4>Gestione delle presenze</h4>
@@ -137,79 +138,81 @@
         </article>
         <article class="service">
           <h4>Consulenza Giuslavoristica e Relazioni Sindacali</h4>
-          <p class="small">Assistenza in materia di diritto del lavoro, gestione delle relazioni sindacali e trattative.
-          </p>
+          <p class="small">Assistenza in materia di diritto del lavoro, gestione delle relazioni sindacali, trattative e
+            vertenze,
+            con supporto in caso di contenziosi.</p>
         </article>
         <article class="service">
-          <h4>Gestione crisi aziendale e Riorganizzazioni</h4>
+          <h4>Gestione crisi aziendale e Riorganizzazioni </h4>
           <p class="small">Supporto in procedure di cassa integrazione, mobilità, trasferimenti d'azienda e
-            ristrutturazioni.</p>
+            ristrutturazione organizzative.</p>
         </article>
         <article class="service">
-          <h4>Consulenza previdenziale e assistenza sociale</h4>
-          <p class="small">Orientamento su pensioni, indennità e benefici previdenziali con assistenza dedicata.</p>
+          <h4>Consulenza previdenziali e assistenza Sociale</h4>
+          <p class="small">Orientamento su pensioni, indennità e altri benefici previdenziali, con assistenza
+            in pratiche legate alla sicurezza sociale.</p>
         </article>
         <article class="service">
           <h4>Servizi per Collaboratori Domestici</h4>
-          <p class="small">Elaborazione buste paga, adempimenti IMPS/INAIL, gestione ferie e malattia.</p>
+          <p class="small">Elaborazione buste paga, adempimenti INPS/INAIL, gestione ferie e malattia, con consulenza
+            dedicata.</p>
         </article>
         <article class="service">
           <h4>Formazione e Aggiornamento Professionale</h4>
-          <p class="small">Organizzazione di corsi e seminari giuslavoristici, fiscali e amministrativi.</p>
+          <p class="small">Organizzazione di corsi e seminari su tematiche giuslavoristiche, fiscali e amministrative,
+            per aggiornare
+            le competenze del personale aziendale.</p>
         </article>
         <article class="service">
           <h4>Servizi di Certificazione e Conciliazione</h4>
-          <p class="small">Assistenza in procedure di certificazione delle competenze, conciliazione e arbitrati.</p>
+          <p class="small">Assistenza in procedure di certificazione delle competenze, conciliazione e arbitrati,
+            per risolvere controversie in modo efficace.</p>
         </article>
         <article class="service">
           <h4>Aggiornamento Clienti</h4>
-          <p class="small">Aggiornamento costante dei clienti sulle possibità di risparmio contributivo.</p>
+          <p class="small">Aggiornamento costante dei clienti sulle possibilità di risparmio contributivo.</p>
         </article>
       </div>
-    </section>
 
-    <!-- CONTATTI -->
-    <section id="contatti">
-      <h2>Contatti</h2>
-      <div class="contact-area">
-        <div class="hero-card">
-          <h4>Studio Castrovinci Evelin — Consulente del Lavoro</h4>
-          <p class="small">Via SS. Annunziata, snc — 98070 Capri Leone (Messina)</p>
-          <p class="small">Cel: +39 329 4868367 Tel: +39 0941 1830802 — cdl.evelincastrovinci@gmail.com</p>
-          <p class="small">Orari: Lun–Ven 09:00–18:00</p>
+      <section id="contatti">
+        <h2>Contatti</h2>
+        <div class="contact-area">
+          <div class="hero-card">
+            <h4>Studio Castrovinci Evelin — Consulente del Lavoro</h4>
+            <p class="small">Via SS. Annunziata, snc — 98070 Capri Leone (Messina)</p>
+            <p class="small">Cel: +39 329 4868367 Tel: +39 0941 1830802 — cdl.evelincastrovinci@gmail.com</p>
+            <p class="small">Orari: Lun–Ven 09:00–18:00</p>
+          </div>
+          <div class="hero-card">
+            <h4>Scrivici</h4>
+            <form id="contactForm">
+              <div><input name="name" placeholder="Nome e cognome / Azienda" required></div>
+              <div><input name="email" type="email" placeholder="Email" required></div>
+              <div><input name="phone" placeholder="Telefono (opz.)"></div>
+              <div><select name="service">
+                  <option>Servizio richiesto</option>
+                  <option>Elaborazione cedolini paga</option>
+                  <option>Gestione Contratti di Lavoro</option>
+                  <option>Conteggi per vertenze</option>
+                  <option>Adempimenti Previdenziali</option>
+                  <option>Gestione delle Presenze</option>
+                  <option>Consulenza Giuslavoristica e Relazioni Sindacali</option>
+                  <option>Gestione Crisi Aziendale e Riorganizzazioni</option>
+                  <option>Servizi per Collaboratori Domestici</option>
+                  <option>Formazione e Aggiornamento Professionale</option>
+                  <option>Servizi di Certificazione e Conciliazione</option>
+                  <option>Altro</option>
+                </select></div>
+              <div><textarea name="message" placeholder="Messaggio"></textarea></div>
+              <div><button class="cta" type="submit" style="width:100%">Invia messaggio</button></div>
+              <div class="small">Accetto l'informativa sulla privacy.</div>
+            </form>
+          </div>
         </div>
-        <div class="hero-card">
-          <h4>Scrivici</h4>
-          <form id="contactForm">
-            <div><input name="name" placeholder="Nome e cognome / Azienda" required></div>
-            <div><input name="email" type="email" placeholder="Email" required></div>
-            <div><input name="phone" placeholder="Telefono (opz.)"></div>
-            <div>
-              <select name="service">
-                <option>Servizio richiesto</option>
-                <option>Elaborazione cedolini paga</option>
-                <option>Gestione Contratti di Lavoro</option>
-                <option>Conteggi per vertenze</option>
-                <option>Adempimenti Previdenziali</option>
-                <option>Gestione delle Presenze</option>
-                <option>Consulenza Giuslavoristica e Relazioni Sindacali</option>
-                <option>Gestione Crisi Aziendale e Riorganizzazioni</option>
-                <option>Servizi per Collaboratori Domestici</option>
-                <option>Formazione e Aggiornamento Professionale</option>
-                <option>Servizi di Certificazione e Conciliazione</option>
-                <option>Altro</option>
-              </select>
-            </div>
-            <div><textarea name="message" placeholder="Messaggio"></textarea></div>
-            <div><button class="cta" type="submit" style="width:100%">Invia messaggio</button></div>
-            <div class="small">Accetto l'informativa sulla privacy.</div>
-          </form>
-        </div>
-      </div>
-    </section>
+      </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- 🔹 Footer -->
   <footer>
     <div class="container footer-main">
       <div class="small">© <span id="year"></span> Studio Castrovinci Evelin — Consulente del Lavoro • Tutti i diritti
@@ -217,28 +220,28 @@
     </div>
   </footer>
 
-  <!-- BOTTONE WHATSAPP -->
+  <!-- 🔹 Bottone WhatsApp fisso -->
   <a href="https://wa.me/3909411830802" class="whatsapp-float" target="_blank" aria-label="Chatta su WhatsApp">
     <img src="images/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon">
   </a>
 
-  <!-- SOCIAL BAR MOBILE -->
+  <!-- 🔹 Social bar (solo mobile) -->
   <div class="mobile-social-bar">
-    <a href="https://www.linkedin.com/in/evelin-castrovinci-335552199" target="_blank"><img
-        src="images/icon-linkedin.svg" alt="LinkedIn"></a>
-    <a href="https://www.instagram.com/studio_castrovinci.evelin" target="_blank"><img src="images/icon-instagram.png"
-        alt="Instagram"></a>
-    <a href="https://www.facebook.com/share/17JTicA5ha/?mibextid=wwXIfr" target="_blank"><img
-        src="images/icon-facebook.svg" alt="Facebook"></a>
-    <a href="https://wa.me/3909411830802" target="_blank"><img src="images/whatsapp-icon1.png" alt="WhatsApp"></a>
+    <a href="https://www.linkedin.com/in/evelin-castrovinci-335552199" target="_blank" aria-label="LinkedIn">
+      <img src="images/icon-linkedin.svg" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/studio_castrovinci.evelin" target="_blank" aria-label="Instagram">
+      <img src="images/icon-instagram.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/share/17JTicA5ha" target="_blank" aria-label="Facebook">
+      <img src="images/icon-facebook.svg" alt="Facebook">
+    </a>
+    <a href="https://wa.me/3909411830802" target="_blank" aria-label="WhatsApp">
+      <img src="images/whatsapp-icon1.png" alt="WhatsApp">
+    </a>
   </div>
 
-  <!-- SCRIPT MENU MOBILE -->
-  <script>
-    document.querySelector(".menu-toggle").addEventListener("click", () => {
-      document.querySelector(".nav-links").classList.toggle("open");
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
