@@ -284,7 +284,7 @@ textarea {
   filter: brightness(0) invert(1);
 }
 
-/* === SOCIAL ICONS SEMPRE VISIBILI === */
+/* === SOCIAL ICONS DESKTOP === */
 .social-icon {
   width: 40px;
   height: 40px;
@@ -307,37 +307,25 @@ textarea {
   display: none;
 }
 
-/* === RESPONSIVE SOLO MOBILE === */
+/* === RESPONSIVE MOBILE === */
 @media(max-width: 880px) {
 
-  /* HEADER + BRAND */
-  .header-main {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
+  /* Header + brand */
   .brand {
     margin: 0;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
   }
 
   .logo {
-    height: 100px;
+    height: 90px;
     width: auto;
-    margin: 0 auto 8px;
+    margin: 0;
   }
 
-  .brand small {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 1px;
-  }
-
-  /* MENU */
+  /* Menu toggle */
   .menu-toggle {
     display: block;
     background: none;
@@ -348,6 +336,7 @@ textarea {
     margin-top: 8px;
   }
 
+  /* Menu nascosto di default */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -375,12 +364,28 @@ textarea {
     padding: 10px;
   }
 
-  /* NASCONDI TOPBAR */
+  /* Nascondi la topbar su mobile */
   .topbar {
     display: none;
   }
 
-  /* SOCIAL BAR MOBILE IN BASSO */
+  /* Hero in colonna */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px 60px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Barra social in basso */
   .mobile-social-bar {
     display: flex;
     justify-content: center;
