@@ -260,7 +260,6 @@ textarea {
   bottom: 22px;
   right: 22px;
   background: #25D366;
-  /* colore ufficiale WhatsApp */
   color: #fff;
   border-radius: 50%;
   width: 60px;
@@ -292,7 +291,6 @@ textarea {
   margin-left: auto;
   vertical-align: middle;
   filter: none;
-  /* 🔥 sempre a colori */
   transition: transform 0.2s ease;
 }
 
@@ -303,26 +301,43 @@ textarea {
 /* === DEFAULT (DESKTOP) === */
 .menu-toggle {
   display: none;
-  /* Nasconde il bottone hamburger su desktop */
 }
 
 .mobile-social-bar {
   display: none;
-  /* Barra social visibile solo su mobile */
 }
 
-/* === RESPONSIVE === */
-/* === MENU A TENDINA MOBILE + SOCIAL BAR IN BASSO === */
+/* === RESPONSIVE SOLO MOBILE === */
 @media(max-width: 880px) {
 
-  /* LOGO proporzionato */
-  .logo {
-    height: 90px;
-    width: auto;
-    margin: 0 auto;
+  /* HEADER + BRAND */
+  .header-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  /* Bottone hamburger */
+  .brand {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    height: 100px;
+    width: auto;
+    margin: 0 auto 8px;
+  }
+
+  .brand small {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+
+  /* MENU */
   .menu-toggle {
     display: block;
     background: none;
@@ -333,7 +348,6 @@ textarea {
     margin-top: 8px;
   }
 
-  /* Menu nascosto di default */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -351,7 +365,6 @@ textarea {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
-  /* Menu quando aperto */
   .nav-links.open {
     display: flex;
   }
@@ -362,12 +375,12 @@ textarea {
     padding: 10px;
   }
 
-  /* Nascondi la topbar con i social */
+  /* NASCONDI TOPBAR */
   .topbar {
     display: none;
   }
 
-  /* Barra social in basso */
+  /* SOCIAL BAR MOBILE IN BASSO */
   .mobile-social-bar {
     display: flex;
     justify-content: center;
