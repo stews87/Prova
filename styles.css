@@ -176,49 +176,6 @@ header {
   box-shadow: 0 4px 12px rgba(12, 30, 60, 0.04);
 }
 
-/* === STATISTICHE === */
-.stats {
-  display: flex;
-  gap: 18px;
-  margin: 22px 0;
-}
-
-.stat {
-  flex: 1;
-  background: linear-gradient(180deg, #fff, #f8fbff);
-  padding: 18px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.stat h3 {
-  margin: 0;
-  font-size: 20px;
-  color: var(--accent);
-}
-
-/* === BLOG === */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin: 24px 0;
-}
-
-.post {
-  background: var(--card);
-  padding: 14px;
-  border-radius: 10px;
-}
-
-/* === TESTIMONIANZE === */
-.testimonials {
-  background: linear-gradient(90deg, #f0f2f5, #fff);
-  padding: 18px;
-  border-radius: 12px;
-  margin-top: 18px;
-}
-
 /* === FOOTER === */
 footer {
   margin-top: 28px;
@@ -284,7 +241,7 @@ textarea {
   filter: brightness(0) invert(1);
 }
 
-/* === SOCIAL ICONS DESKTOP === */
+/* === SOCIAL ICONS SEMPRE VISIBILI (DESKTOP) === */
 .social-icon {
   width: 40px;
   height: 40px;
@@ -310,22 +267,49 @@ textarea {
 /* === RESPONSIVE MOBILE === */
 @media(max-width: 880px) {
 
-  /* Header + brand */
+  /* Header e brand */
+  .header-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .brand {
     margin: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+  }
+
+  .brand small {
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--accent);
   }
 
   .logo {
-    height: 90px;
+    height: 70px;
     width: auto;
-    margin: 0;
+    margin: 0 0 6px 0;
   }
 
-  /* Menu toggle */
+  /* Hero in colonna */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px 40px;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Menu hamburger */
   .menu-toggle {
     display: block;
     background: none;
@@ -336,7 +320,6 @@ textarea {
     margin-top: 8px;
   }
 
-  /* Menu nascosto di default */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -364,28 +347,12 @@ textarea {
     padding: 10px;
   }
 
-  /* Nascondi la topbar su mobile */
+  /* Nascondi topbar */
   .topbar {
     display: none;
   }
 
-  /* Hero in colonna */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    padding: 100px 20px 60px;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .hero-card {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.7);
-  }
-
-  /* Barra social in basso */
+  /* Social bar in basso */
   .mobile-social-bar {
     display: flex;
     justify-content: center;
